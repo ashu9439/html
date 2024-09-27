@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="h-full w-full" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novartis GenLite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .tab-content {
+            display: none; /* Hide all tab contents by default */
+        }
+
+        .tab-content.active {
+            display: block; /* Show the active tab content */
+        }
+    </style>
+</head>
+
+<body class="h-full w-full m-0 p-0 overflow-auto bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <div class="flex items-center">
+                <img src="https://www.novartis.com/sites/novartis_com/files/2021-10/novartis-logo-transparent.png"
+                    alt="Novartis Logo" class="h-12">
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-md">Logout</button>
+        </div>
+    </header>
+
+    <!-- Title & Subtitle -->
+    <div class="text-center mt-4">
+        <p class="text-xl font-medium">Empowering the Technology Delivery Life Cycle</p>
+        <p class="text-gray-600">Gen Lite is a transformative AI assistant by harnessing the power of LLM, Gen Lite
+            simplifies and optimizes every phase of the development process.</p>
+        <p class="text-red-500 font-bold mt-2">Important: This is a Demo Application. Do not try with Client Data.</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="mt-8 border-b border-gray-300">
+        <ul class="flex justify-center space-x-4">
+            <li><button onclick="showTab('input')" class="tab-link px-4 py-2 border-b-2 border-blue-600">Input</button></li>
+            <li><button onclick="showTab('tab-epic')" class="tab-link px-4 py-2">Epic</button></li>
+            <li><button onclick="showTab('features')" class="tab-link px-4 py-2">Features</button></li>
+            <li><button onclick="showTab('user-stories')" class="tab-link px-4 py-2">User Stories</button></li>
+        </ul>
+    </div>
+
+    <section class="container mx-auto mt-8 px-6">
+        <!-- Tab Content -->
+        <div class="mt-6">
+            <!-- Input Tab Content -->
+            <div id="input" class="tab-content active">
+                <form>
+                    <!-- Select Industry Dropdown -->
+                    <div class="mb-6">
+                        <label for="industry" class="block text-gray-700 font-medium">Select Industry</label>
+                        <select id="industry" class="block w-full mt-2 p-2 border border-gray-300 rounded-md">
+                            <option>Industry</option>
+                            <option value="1">Technology</option>
+                            <option value="2">Healthcare</option>
+                            <option value="3">Finance</option>
+                        </select>
+                    </div>
+
+                    <!-- Ecosystem Context -->
+                    <div>
+                        <label class="block text-gray-700 font-medium">Ecosystem Context</label>
+                        <div class="border border-gray-300 p-6 rounded-md mt-2 h-40">
+                            Select Industry from the above dropdown panel.
+                        </div>
+                    </div>
+
+                    <!-- Generate Button -->
+                    <div class="mt-6 flex justify-end">
+                        <button type="button" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md">Generate Epic</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Epic Tab Content -->
+            <div id="tab-epic" class="tab-content">
+                <h3 class="text-lg font-medium">Epic Content</h3>
+                <p class="mt-4 text-gray-600">Content for Epic will be displayed here.</p>
+            </div>
+
+            <!-- Features Tab Content -->
+            <div id="features" class="tab-content">
+                <h3 class="text-lg font-medium">Features Content</h3>
+                <p class="mt-4 text-gray-600">Content for Features will be displayed here.</p>
+            </div>
+
+            <!-- User Stories Tab Content -->
+            <div id="user-stories" class="tab-content">
+                <h3 class="text-lg font-medium">User Stories Content</h3>
+                <p class="mt-4 text-gray-600">Content for User Stories will be displayed here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript to handle tab switching -->
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.classList.remove('active'); // Hide all tabs
+            });
+
+            const tabLinks = document.querySelectorAll('.tab-link');
+            tabLinks.forEach(link => {
+                link.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600'); // Reset link styles
+                link.classList.add('text-gray-600');
+            });
+
+            const selectedTab = document.getElementById(tabId);
+            selectedTab.classList.add('active'); // Show selected tab
+
+            const selectedTabLink = document.querySelector(`[onclick="showTab('${tabId}')"]`);
+            selectedTabLink.classList.add('text-blue-600', 'border-b-2', 'border-blue-600'); // Highlight selected tab link
+        }
+
+        // showTab("input"); 
+    </script>
+</body>
+
+</html>

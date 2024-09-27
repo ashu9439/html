@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full w-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novartis GenLite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="h-full w-full m-0 p-0 overflow-auto bg-gray-100">
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <img src="https://www.novartis.com/sites/novartis_com/files/2021-10/novartis-logo-transparent.png" alt="Novartis Logo" class="h-12">
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-md">Logout</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-8 px-6">
+        <section class="text-center">
+            <h1 class="text-xl font-medium">Empowering the Technology Delivery Life Cycle</h1>
+            <p class="text-gray-600">Gen Lite is a transformative AI assistant by harnessing the power of LLM, Gen Lite simplifies and optimizes every phase of the development process.</p>
+            <p class="text-red-500 font-bold mt-2">Important: This is a Demo Application. Do not try with Client Data.</p>
+        </section>
+
+        <nav class="mt-8 border-b border-gray-300">
+            <ul class="flex justify-center space-x-4">
+                <li><button onclick="showTab('tab_input')" class="tab-link px-4 py-2 text-blue-600 border-b-2 border-blue-600">Input</button></li>
+                <li><button onclick="showTab('tab_epic')" class="tab-link px-4 py-2">Epic</button></li>
+                <li><button onclick="showTab('tab_features')" class="tab-link px-4 py-2">Features</button></li>
+                <li><button onclick="showTab('tab_user-stories')" class="tab-link px-4 py-2">User Stories</button></li>
+            </ul>
+        </nav>
+
+        <div id="tab-contents" class="mt-6"></div>
+    </main>
+
+    <script>
+        function loadTabContent(tabFile) {
+            fetch(tabFile)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('tab-contents').innerHTML = data;
+                    showTab(tabFile); // Show the loaded tab content
+                })
+                .catch(error => console.error('Error loading tab content:', error));
+        }
+
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const tabLinks = document.querySelectorAll('.tab-link');
+
+            // tabs.forEach(tab => {
+            //     tab.classList.remove('active');
+            // });
+
+            tabLinks.forEach(link => {
+                link.classList.remove('text-blue-600', 'border-blue-600');
+                link.classList.add('text-gray-600', 'border-transparent');
+            });
+
+            const selectedTabLink = document.querySelector(`[onclick="showTab('${tabId}')"]`);
+            selectedTabLink.classList.add('text-blue-600', 'border-blue-600');
+
+            // const loadedTab = document.getElementById(tabId);
+            // loadedTab.classList.add('active');
+
+            loadTabContent(`Tabs/${tabId}.html`);
+        }
+
+        // Load the default tab content
+        loadTabContent('Tabs/input.html');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<div id="tab-epic" class="tab-content h-full w-full m-0 p-0 flex flex-col ">
+    <div class="sticky top-0 bg-blue-500 p-4">
+        bole bole
+    </div>
+
+    <!-- div for 2 text boxes -->
+    <div class="flex-1 flex bg-green-500 p-4 overflow-y-auto">
+        <div class="textarea-container flex flex-col flex-1 bg-blue-500 p-2">
+            <textarea id="TB_Epic_businessCase" class="border-0 rounded-md p-2 flex-1" placeholder="Type your message here..."
+                oninput="updateCharCount('TB_Epic_businessCase', 'WordCount_TB_Epic_businessCase')"></textarea>
+
+            <p class="text-right text-sm text-gray-600 mt-1 ">
+                <span id="WordCount_TB_Epic_businessCase" class="">0</span> / 5000 Characters
+            </p>
+        </div>
+
+        <div class="textarea-container flex flex-col flex-1 bg-blue-200 p-2">
+            <textarea id="TB_Epic_abstract" class="border-0 rounded-md p-2 flex-1" placeholder="Type your message here..."
+                oninput="updateCharCount('TB_Epic_abstract', 'WordCount_TB_Epic_abstract')"></textarea>
+
+            <p class="text-right text-sm text-gray-600 mt-1 ">
+                <span id="WordCount_TB_Epic_abstract" class="">0</span> / 5000 Characters
+            </p>
+        </div>
+
+    </div>
+
+    <!-- div for Botton -->
+    <div class="sticky bottom-0 bg-red-500 p-4">
+        aja button
+
+    </div>
+
+</div>
+

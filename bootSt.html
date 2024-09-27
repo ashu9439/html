@@ -1,0 +1,17 @@
+<script>
+  const tabList = document.getElementById('tab-list');
+  const childrenCount = tabList.children.length; // Get number of child <li> elements
+
+  // Remove any existing space-x class
+  const existingClasses = Array.from(tabList.classList);
+  existingClasses.forEach(cls => {
+      if (cls.startsWith('space-x-')) {
+          tabList.classList.remove(cls);
+      }
+  });
+
+  // Add new space-x-{number} class
+  if (childrenCount > 0) {
+      tabList.classList.add(`space-x-${childrenCount}`);
+  }
+</script>

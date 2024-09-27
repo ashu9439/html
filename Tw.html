@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="h-full w-full" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novartis GenLite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body class="h-full w-full m-0 p-0 overflow-hidden bg-gray-100">
+  <!-- Header -->
+  <header class="bg-white shadow-sm py-4">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <div class="flex items-center">
+        <img src="https://www.novartis.com/sites/novartis_com/files/2021-10/novartis-logo-transparent.png"
+          alt="Novartis Logo" class="h-12">
+
+      </div>
+      <button class="px-4 py-2 bg-blue-500 text-white rounded-md">Logout</button>
+    </div>
+  </header>
+
+  <!-- Title & Subtitle -->
+  <div class="text-center">
+    <h2 class="text-xl font-medium">Empowering the Technology Delivery Life Cycle</h2>
+    <p class="text-gray-600">Gen Lite is a transformative AI assistant by harnessing the power of LLM, Gen Lite
+      simplifies and optimizes every phase of the development process.</p>
+    <p class="text-red-500 font-bold mt-2">Important: This is a Demo Application. Do not try with Client Data.</p>
+  </div>
+
+  <!-- Main Section -->
+  <section class="container mx-auto mt-8 px-6">
+    
+
+    <!-- Tabs -->
+    <div class="mt-8 border-b border-gray-300">
+      <ul class="flex justify-center space-x-4">
+        <li><button onclick="showTab('input')"
+            class="tab-link px-4 py-2 text-blue-600 border-b-2 border-blue-600">Input</button></li>
+        <li><button onclick="showTab('epic')" class="tab-link px-4 py-2">Epic</button></li>
+        <li><button onclick="showTab('features')" class="tab-link px-4 py-2">Features</button></li>
+        <li><button onclick="showTab('user-stories')" class="tab-link px-4 py-2">User Stories</button></li>
+        <!-- Add more tabs as needed -->
+      </ul>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="mt-6">
+      <!-- Input Tab Content -->
+      <div id="input" class="tab-content active">
+        <form>
+          <!-- Select Industry Dropdown -->
+          <div class="mb-6">
+            <label for="industry" class="block text-gray-700 font-medium">Select Industry</label>
+            <select id="industry" class="block w-full mt-2 p-2 border border-gray-300 rounded-md">
+              <option>Industry</option>
+              <option value="1">Technology</option>
+              <option value="2">Healthcare</option>
+              <option value="3">Finance</option>
+            </select>
+          </div>
+
+          <!-- Ecosystem Context -->
+          <div>
+            <label class="block text-gray-700 font-medium">Ecosystem Context</label>
+            <div class="border border-gray-300 p-6 rounded-md mt-2 h-40">
+              Select Industry from the above dropdown panel.
+            </div>
+          </div>
+
+          <!-- Generate Button -->
+          <div class="mt-6 flex justify-end">
+            <button type="button" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md">Generate Epic</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Epic Tab Content -->
+      <div id="epic" class="tab-content">
+        <h3 class="text-lg font-medium">Epic Content</h3>
+        <p class="mt-4 text-gray-600">Content for Epic will be displayed here.</p>
+      </div>
+
+      <!-- Features Tab Content -->
+      <div id="features" class="tab-content">
+        <h3 class="text-lg font-medium">Features Content</h3>
+        <p class="mt-4 text-gray-600">Content for Features will be displayed here.</p>
+      </div>
+
+      <!-- User Stories Tab Content -->
+      <div id="user-stories" class="tab-content">
+        <h3 class="text-lg font-medium">User Stories Content</h3>
+        <p class="mt-4 text-gray-600">Content for User Stories will be displayed here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript to handle tab switching -->
+  <script>
+    function showTab(tabId) {
+      // Hide all tab content
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      // Remove active class from all tab links
+      const tabLinks = document.querySelectorAll('.tab-link');
+      tabLinks.forEach(link => {
+        link.classList.remove('text-blue-600', 'border-blue-600');
+        link.classList.add('text-gray-600', 'border-transparent');
+      });
+
+      // Show the selected tab content
+      const selectedTab = document.getElementById(tabId);
+      selectedTab.classList.add('active');
+
+      // Highlight the selected tab link
+      const selectedTabLink = document.querySelector(`[onclick="showTab('${tabId}')"]`);
+      selectedTabLink.classList.add('text-blue-600', 'border-blue-600');
+    }
+  </script>
+
+</body>
+
+</html>
+
+
+<div id="tab_input_content" class="tab-content active">
+    <form>
+        <div class="mb-6">
+            <label for="industry" class="block text-gray-700 font-medium">Select Industry</label>
+            <select id="industry" class="block w-full mt-2 p-2 border border-gray-300 rounded-md">
+                <option disabled selected>Industry</option>
+                <option value="1">Technology</option>
+                <option value="2">Healthcare</option>
+                <option value="3">Finance</option>
+            </select>
+        </div>
+
+        <div>
+            <label class="block text-gray-700 font-medium">Ecosystem Context</label>
+            <textarea class="border border-gray-300 p-6 rounded-md mt-2 h-40 w-full">
+                Select Industry from the above dropdown panel.
+            </textarea>
+        </div>
+
+        <div class="mt-6 flex justify-end">
+
+            <div class="tooltip">
+                <!-- Tooltip Icon -->
+                <svg width="30" height="30" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.3998 9.6C12.8416 9.6 13.1998 9.24183 13.1998 8.8C13.1998 8.35817 12.8416 8 12.3998 8C11.958 8 11.5998 8.35817 11.5998 8.8C11.5998 9.24183 11.958 9.6 12.3998 9.6Z"
+                        fill="#949499" />
+                    <path
+                        d="M11.8341 10.6344C11.9842 10.4844 12.1876 10.4001 12.3998 10.4001C12.612 10.4001 12.8155 10.4844 12.9655 10.6344C13.1155 10.7845 13.1998 10.9879 13.1998 11.2001V15.2001C13.1998 15.4123 13.1155 15.6158 12.9655 15.7658C12.8155 15.9158 12.612 16.0001 12.3998 16.0001C12.1876 16.0001 11.9842 15.9158 11.8341 15.7658C11.6841 15.6158 11.5998 15.4123 11.5998 15.2001V11.2001C11.5998 10.9879 11.6841 10.7845 11.8341 10.6344Z"
+                        fill="#949499" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12.3999 4C10.8177 4 9.27094 4.46919 7.95534 5.34824C6.63975 6.22729 5.61437 7.47672 5.00887 8.93853C4.40337 10.4003 4.24494 12.0089 4.55362 13.5607C4.86231 15.1126 5.62423 16.538 6.74305 17.6569C7.86187 18.7757 9.28733 19.5376 10.8392 19.8463C12.391 20.155 13.9996 19.9965 15.4614 19.391C16.9232 18.7855 18.1726 17.7602 19.0517 16.4446C19.9307 15.129 20.3999 13.5822 20.3999 12C20.3999 10.9494 20.193 9.90914 19.7909 8.93853C19.3889 7.96793 18.7996 7.08601 18.0568 6.34315C17.3139 5.60028 16.432 5.011 15.4614 4.60896C14.4908 4.20693 13.4505 4 12.3999 4ZM12.3999 18.4C11.1341 18.4 9.89673 18.0246 8.84425 17.3214C7.79178 16.6182 6.97148 15.6186 6.48708 14.4492C6.00268 13.2797 5.87593 11.9929 6.12288 10.7514C6.36983 9.50994 6.97937 8.36957 7.87442 7.47452C8.76948 6.57946 9.90985 5.96992 11.1513 5.72297C12.3928 5.47603 13.6796 5.60277 14.8491 6.08717C16.0185 6.57157 17.0181 7.39187 17.7213 8.44435C18.4245 9.49682 18.7999 10.7342 18.7999 12C18.7999 13.6974 18.1256 15.3252 16.9254 16.5255C15.7252 17.7257 14.0973 18.4 12.3999 18.4Z"
+                        fill="#949499" />
+                </svg>
+                <!-- Tooltip Text -->
+                <span class="tooltiptext"><strong>Important Note:</strong> The content generated by artificial intelligence (AI) tools or
+                    platforms may contain
+                    inaccuracies, errors, and omissions. This AI-generated content should not be considered a
+                    replacement
+                    for human expertise, review, and judgment. Users are urged to verify any information or content
+                    derived
+                    from AI sources with qualified professionals.</span>
+            </div>
+
+
+            <button id="btn_gen_epic" type="button"
+                class="mx-4 px-4 py-2 rounded-md text-white bg-sky-600 hover:bg-sky-700 active:bg-sky-800 disabled:bg-gray-300 disabled:hover:bg-gray-400">
+                Generate Epic
+            </button>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <div class="flex items-center">
+                <img src="https://www.novartis.com/sites/novartis_com/files/2021-10/novartis-logo-transparent.png"
+                    alt="Novartis Logo" class="h-12">
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-md">Logout</button>
+        </div>
+    </header>
+
+    <!-- Title & Subtitle -->
+    <main class="flex-auto ">
+        <div class="text-center mt-4">
+            <p class="text-xl font-medium">Empowering the Technology Delivery Life Cycle</p>
+            <p class="text-gray-600">Gen Lite is a transformative AI assistant by harnessing the power of LLM, Gen Lite
+                simplifies and optimizes every phase of the development process.</p>
+            <p class="text-red-500 font-bold mt-2">Important: This is a Demo Application. Do not try with Client Data.</p>
+        </div>
+
+        <!-- Tabs links-->
+        <div class="mt-8 border-b border-gray-300 flex-auto overflow-auto">
+            <ul class="flex justify-center space-x-4">
+                <li><button id='tab_input' onclick="showTab('tab_input')" class="tab-link px-4 py-2 border-b-2 border-blue-600">Input</button></li>
+                <li><button id='tab_epic' onclick="showTab('tab_epic')" class="tab-link px-4 py-2">Epic</button></li>
+                <li><button id='tab_features' onclick="showTab('tab_features')" class="tab-link px-4 py-2">Features</button></li>
+                <li><button id='tab_user-stories' onclick="showTab('tab_user-stories')" class="tab-link px-4 py-2">User Stories</button></li>
+            </ul>
+        </div>
+
+            <!-- Tab Content -->
+        <div id="tab-contents" class=" m-6"></div>
+
+
+        <script> showTab('tab_input');</script>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200  py-4 ">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+            <div class="flex space-x-4">
+                <a href="#" class="text-sm text-gray-400 hover:text-white">Privacy Policy</a>
+                <a href="#" class="text-sm text-gray-400 hover:text-white">Terms & Conditions</a>
+                <a href="#" class="text-sm text-gray-400 hover:text-white">Support</a>
+            </div>
+            <div class="mt-4 md:mt-0 text-sm text-gray-400">
+                ©2024 All Rights Reserved | Version: 0.01
+            </div>
+        </div>
+    </footer>

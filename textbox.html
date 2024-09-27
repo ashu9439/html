@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Input Box</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+    <div class="max-w-4xl w-full bg-white shadow-lg rounded-lg p-6">
+        <!-- Title -->
+        <div class="flex justify-between items-center mb-4">
+            <h1 class="text-xl font-semibold">Epic Abstract</h1>
+            <button class="bg-gray-200 text-sm text-blue-500 px-2 py-1 rounded-lg">
+                Copy
+            </button>
+        </div>
+
+        <!-- Textarea -->
+        <textarea id="epicAbstract" rows="10"
+            class="w-full p-4 text-sm bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+            placeholder="Enter your text here...">
+- Then the product should be marked as unavailable in my wishlist.
+- Given that I have added a product to my wishlist,
+- When the price of the product changes,
+- Then the price displayed in my wishlist should be updated accordingly.
+
+4. Risks and Dependencies:
+- The availability of product data and inventory information needs to be accurate and up-to-date for the wishlist feature to function correctly.
+- The implementation of user authentication and session management is required to associate wishlists with specific customers.
+
+5. Design and Technical Specifications:
+- The wishlist feature should be integrated into the existing SimplCommerce application.
+- The database schema should include a table to store wishlist items associated with customer accounts.
+- The frontend UI should provide a clear and intuitive interface for customers to add, view, and manage their wishlist.
+
+6. Non-functional Requirements:
+- Performance: The addition, removal, and viewing of wishlist items should be fast and responsive.
+- Security: Wishlist data should be securely stored and associated with specific customer accounts.
+- Usability: The wishlist feature should be easy to use and navigate for customers, with clear instructions and feedback.
+              </textarea>
+    </div>
+
+</body>
+
+</html>

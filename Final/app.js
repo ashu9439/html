@@ -55,3 +55,25 @@ function updateCharCount(textboxid, countId) {
   const countDisplay = document.getElementById(countId);
   countDisplay.textContent = textInput.value.length; // Update character count
 }
+
+
+//load html and javascript
+function loadHTMLIntoDiv(url, jsFile) {
+  fetch(url)
+      .then(response => response.text())
+      .then(data => {
+          // Inject HTML content
+          document.getElementById('contentContainer').innerHTML = data;
+
+          // Load external JavaScript if provided
+          if (jsFile) {
+              const script = document.createElement('script');
+              script.src = jsFile;
+              script.type = 'text/javascript';
+              document.body.appendChild(script);
+          }
+      })
+      .catch(error => {
+          console.error('Error loading HTML:', error);
+      });
+}

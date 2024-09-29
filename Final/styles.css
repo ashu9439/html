@@ -18,11 +18,15 @@ main {
   flex: 1;
 }
 
-.tab-content.active {
+.tab-content {
   display: block;
-  /* display: flex;         */
-  /* flex-direction: column;  */
+  display: flex;        
+  flex-direction: column; 
   /* height: 100vh;  */
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .debug {
@@ -32,6 +36,12 @@ main {
   /* border-radius: 8px;           Rounded corners */
 } 
 
+.debugBgf {
+  border: 2px solid red;        /* Border color and width */
+  /* padding: 16px;                Padding */
+  /* background-color: rgb(20, 192, 106);  Background color */
+  /* border-radius: 8px;           Rounded corners */
+} 
 /* Custom Tooltip Styles ===========================================================================================*/
 .tooltip {
   position: relative;
@@ -72,4 +82,15 @@ main {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+/* glass background--------------------------------------------------- */
+.glassbg {
+  background: linear-gradient(to bottom,  rgba(36, 72, 116, 0.5), rgba(83, 129, 184, 0.5));
+  justify-content: center;
+  color: white;
+}
+
+.glassbg:hover {
+  background: linear-gradient(to bottom, rgba(83, 129, 184, 0.7), rgba(36, 72, 116, 0.7));
 }

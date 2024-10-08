@@ -1,0 +1,6 @@
+[run]
+source = genLit
+omit = 
+    tests/*
+    autoapp.py
+

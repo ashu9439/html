@@ -1,0 +1,52 @@
+
+<!-- Tabs links-->
+<div class="mt-2 border-b border-gray-300">
+  <ul class="flex justify-center space-x-4" id="tab-list">
+    <li>
+      <button
+        id="tab_input"
+        onclick="showTab('/input', this)"
+        class="tab-link px-4 py-2"
+      >
+        Input
+      </button>
+    </li>
+    <li>
+      <button
+        id="tab_epic"
+        onclick="showTab('/epic', this)"
+        class="tab-link px-4 py-2"
+      >
+        Epic
+      </button>
+    </li>
+    <li>
+      <button
+        id="tab_features"
+        onclick="showTab('/features', this)"
+        class="tab-link px-4 py-2"
+      >
+        Features
+      </button>
+    </li>
+    <li>
+      <button
+        id="tab_user_stories"
+        onclick="showTab('/user-stories', this)"
+        class="tab-link px-4 py-2"
+      >
+        User Stories
+      </button>
+    </li>
+  </ul>
+
+  <script>
+    function showTab(route, button) {
+      // Change the location to the desired route
+      window.location.href = route;
+
+      button.classList.add("border-b-2", "border-blue-600", "font-bold"); // Highlight the current tab
+      // Update the active tab reference
+    }
+  </script>
+</div>

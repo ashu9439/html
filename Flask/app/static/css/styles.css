@@ -1,0 +1,334 @@
+/* CSS styles */
+
+/* styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.full-height-width {
+  height: 100%;
+  width: 100%;
+}
+
+.vl {
+  border-left: 1px solid rgb(188, 191, 188);
+  margin: 0px 4px;
+}
+
+body.body-layout {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  background-color: #f7fafc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+.header-buttons {
+  background-color: white;
+  border: 1px solid black;
+  margin: 0px 2px;
+  color: black;
+  border-radius: 50%;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer {
+  background-color: #f7fafc;
+  padding: 1rem 0;
+  position: sticky;
+  bottom: 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.footer-link {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+.footer-rights {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.form-label{
+  font-weight: bold;
+}
+
+
+.required:after {
+  content: " *";
+  color: red;
+}
+
+.tab-content {
+  display: block;
+  display: flex;
+  /* flex-direction: column; */
+  /* height: 100vh;  */
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.debug {
+  border: 2px solid red; /* Border color and width */
+  /* padding: 16px;                Padding */
+  background-color: rgb(20, 192, 106); /* Background color */
+  /* border-radius: 8px;           Rounded corners */
+}
+
+.debugBgf {
+  border: 2px solid red; /* Border color and width */
+  /* padding: 16px;                Padding */
+  /* background-color: rgb(20, 192, 106);  Background color */
+  /* border-radius: 8px;           Rounded corners */
+}
+/* Custom Tooltip Styles ===========================================================================================*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  margin-left: -150px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 80%;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* glass background--------------------------------------------------- */
+.glassbg {
+  padding: 8px;
+  border-radius: 5px;   
+  background: linear-gradient(
+    to bottom,
+    rgba(36, 72, 116, 0.7),
+    rgba(83, 129, 184, 0.7)
+  );
+  justify-content: center;
+  color: white;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.glassbg:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(83, 129, 184, 0.8),
+    rgba(36, 72, 116, 0.8)
+  );
+
+  backdrop-filter: blur(12px); /* Slightly stronger blur on hover */
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/*  Scrollbar styles---------------------------------------------------------*/
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #969595;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #d5d1d1;
+  border-radius: 4px;
+}
+/*  textbox styles---------------------------------------------------------*/
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  /* border: 2px solid #ccc; */
+  /* border-radius: 4px; */
+  background-color: #ffffff;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+  /* box-shadow: 0 0 5px rgba(81, 203, 238, 1);  */
+  /* border: 1px solid rgba(81, 203, 238, 1);   */
+}
+
+label {
+  font-size: 1.125rem; /* Equivalent to text-lg in Tailwind (18px) */
+  font-weight: 600; /* Equivalent to font-semibold */
+}
+
+/* main contaoiner============================================================== */
+
+.flexmain {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem; /* Equivalent to Tailwind's p-4 */
+  overflow: auto;
+}
+
+/* primary button ==================================================================== */
+/* Base styles for the button */
+.btn-primary {
+  background-color: #007bff; /* Blue */
+  color: white; /* Text color */
+  border: none; /* No border */
+  padding: 0.5rem 1rem; /* Padding */
+  border-radius: 0.25rem; /* Rounded corners */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s, transform 0.1s; /* Smooth transition */
+}
+
+/* Hover state */
+.btn-primary:hover {
+  background-color: #0056b3; /* Deeper blue */
+}
+
+/* Disabled state */
+.btn-primary:disabled {
+  background-color: #6c757d; /* Gray */
+  cursor: not-allowed; /* Not allowed cursor */
+}
+
+/* Active/click state */
+.btn-primary:active {
+  transform: scale(0.95); /* Slightly scale down */
+  background-color: #004085; /* Darker blue */
+}
+
+/* Optional: Focus state for accessibility */
+.btn-primary:focus {
+  outline: none; /* Remove outline */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); /* Blue shadow */
+}
+
+/* progrss bar =============================================================== */
+
+.progress-step {
+  text-align: center;
+}
+.progress-step .step-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  display: inline-block;
+  line-height: 36px;
+  font-size: 16px;
+  color: #007bff;
+}
+.completed {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.line-separator {
+  height: 1px; /* Equivalent to h-px */
+  width: 64px; /* Equivalent to w-16 (16 * 4px) */
+  background-color: #3b82f6; /* Equivalent to bg-blue-600 */
+  margin: auto 0; /* Optional: centers the line horizontally */
+}
+
+.verticallyCenter {
+  margin: auto 0;
+}
+
+
+
+.bakgroundImg {
+  background-size: cover; /* Adjusts the size of the background */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image */
+}

@@ -2,17 +2,17 @@
     <div class="flex sticky top-0 w-full p-4">
         <!-- First Div with Checkboxes -->
         <div class="flex-1 bg-white p-4 rounded-lg flex">
-            <p class="text-lg font-semibold mr-4 pt-1">Selected Inputs</p>
+            <label class="mr-4 pt-1">Selected Inputs</label>
             <div class="flex">
-                <label class="flex items-center mr-4">
-                    <input type="checkbox" class="mr-2">
+                <label class="flex items-center mr-4 text-gray-400">
+                    <input type="checkbox" class="mr-2 text-gray-400">
                     Application Content
                 </label>
-                <label class="flex items-center mr-4">
+                <label class="flex items-center mr-4 text-gray-400">
                     <input type="checkbox" class="mr-2">
                     Scope/Vision/HLR
                 </label>
-                <label class="flex items-center mr-4">
+                <label class="flex items-center mr-4 text-gray-400">
                     <input type="checkbox" class="mr-2">
                     Epic User Story
                 </label>
@@ -21,7 +21,8 @@
 
         <!-- Second Div with Buttons -->
         <div class="flex flex-1  p-4 justify-end ">
-            <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mr-2">Get feature details</button>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mr-2">Get feature
+                details</button>
             <button class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Clear feature details</button>
         </div>
     </div>
@@ -29,24 +30,16 @@
 
     <!-- div for 2 text boxes -->
     <div class="flex-1 flex p-4 overflow-y-auto">
-        <div class="textarea-container flex flex-col flex-1 border-2 rounded-lg p-2 m-1">
-            <textarea id="TB_Epic_businessCase" class="border-0 rounded-md p-2 flex-1"
-                placeholder="Type your message here..."
-                oninput="updateCharCount('TB_Epic_businessCase', 'WordCount_TB_Epic_businessCase')"></textarea>
-
-            <p class="text-right text-sm text-gray-600 mt-1 ">
-                <span id="WordCount_TB_Epic_businessCase" class="">0</span> / 5000 Characters
-            </p>
+        <div id="featureContainer1" class="textarea-container flex flex-col flex-1 border-2 rounded-lg p-2 m-1">
+            <div role="textbox"  class="border-0 rounded-md p-2 flex-1">
+                
+            </div>          
         </div>
 
-        <div class="textarea-container flex flex-col flex-1 border-2 rounded-lg p-2 m-1">
-            <textarea id="TB_Epic_abstract" class="border-0 rounded-md p-2 flex-1"
-                placeholder="Type your message here..."
-                oninput="updateCharCount('TB_Epic_abstract', 'WordCount_TB_Epic_abstract')"></textarea>
+        <div id="featureContainer2" role="textbox" class="textarea-container flex flex-col flex-1 border-2 rounded-lg p-2 m-1">
+            <div class="border-0 rounded-md p-2 flex-1">
 
-            <p class="text-right text-sm text-gray-600 mt-1 ">
-                <span id="WordCount_TB_Epic_abstract" class="">0</span> / 5000 Characters
-            </p>
+            </div>
         </div>
 
     </div>

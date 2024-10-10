@@ -101,10 +101,21 @@ main {
   flex: 1;
 }
 
-.form-label{
-  font-weight: bold;
+.mborder{
+  border: 1px solid rgb(123, 121, 121);
+  border-radius: 5px;
 }
 
+
+.form-label {
+  font-weight: bold;
+  margin: 0;
+  /* font-size: 1.125rem;  */
+}
+/* label {
+  font-size: 1.125rem; 
+  font-weight: 600; 
+} */
 
 .required:after {
   content: " *";
@@ -112,9 +123,9 @@ main {
 }
 
 .tab-content {
-  display: block;
+  /* display: block; */
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   /* height: 100vh;  */
   height: 100%;
   width: 100%;
@@ -179,7 +190,7 @@ main {
 /* glass background--------------------------------------------------- */
 .glassbg {
   padding: 8px;
-  border-radius: 5px;   
+  border-radius: 5px;
   background: linear-gradient(
     to bottom,
     rgba(36, 72, 116, 0.7),
@@ -226,27 +237,27 @@ main {
   border-radius: 4px;
 }
 /*  textbox styles---------------------------------------------------------*/
-textarea {
+/* textarea {
   width: 100%;
   height: 150px;
   padding: 12px 20px;
-  box-sizing: border-box;
+  box-sizing: border-box; */
   /* border: 2px solid #ccc; */
   /* border-radius: 4px; */
-  background-color: #ffffff;
+  /* background-color: #ffffff;
   resize: none;
-}
+} */
 
 textarea:focus {
-  outline: none;
-  /* box-shadow: 0 0 5px rgba(81, 203, 238, 1);  */
-  /* border: 1px solid rgba(81, 203, 238, 1);   */
+  outline: none; 
+  border: 0;    
+  box-shadow: none;
+}
+textarea::placeholder {
+  text-align: center; 
+  /* padding-top: 20vh; */
 }
 
-label {
-  font-size: 1.125rem; /* Equivalent to text-lg in Tailwind (18px) */
-  font-weight: 600; /* Equivalent to font-semibold */
-}
 
 /* main contaoiner============================================================== */
 
@@ -314,21 +325,67 @@ label {
   border: none;
 }
 
-.line-separator {
-  height: 1px; /* Equivalent to h-px */
-  width: 64px; /* Equivalent to w-16 (16 * 4px) */
-  background-color: #3b82f6; /* Equivalent to bg-blue-600 */
-  margin: auto 0; /* Optional: centers the line horizontally */
-}
 
 .verticallyCenter {
   margin: auto 0;
 }
 
-
-
 .bakgroundImg {
   background-size: cover; /* Adjusts the size of the background */
   background-repeat: no-repeat; /* Prevents the image from repeating */
   background-position: center; /* Centers the image */
+}
+
+/* nav styling------------------------------------------------------------------------------ */
+.nav-link {
+  /* colour: black; */
+}
+
+.nav-link:focus{
+  font-weight: bold;
+  border-bottom: 4px solid rgb(4, 8, 112);
+}
+
+.active-nav {
+  font-weight: bold;
+  border-bottom: 4px solid rgb(38, 5, 145);
+}
+.nav-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  caret-color: transparent;
+}
+.nav-item:hover {
+  background-color: rgba(0, 123, 255, 0.1); 
+}
+
+.no-caret {
+  caret-color: transparent;
+}
+
+/* flow icon container ============================= */
+.flow-icon-container {
+  display: flex;                   /* Equivalent to d-flex */
+  justify-content: center;        /* Equivalent to justify-content-center */
+  align-items: center;            /* Equivalent to align-items-center */
+  border: 2px solid gray;              /* Equivalent to border and border-2 */
+  border-radius: 50%;             /* Equivalent to rounded-circle */
+}
+
+.flow-completed{
+  border: 2px solid blue;  
+  background-color:  #3881f7a4;
+}
+
+.line-separator {
+  height: 1px; 
+  width: 64px; 
+  background-color: #3b82f6; 
+  margin: auto 0;
+}
+
+
+/* to all elements====================================================================================== */
+p{
+  caret-color: transparent;
 }

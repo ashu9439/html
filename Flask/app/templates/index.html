@@ -1,274 +1,858 @@
 <!DOCTYPE html>
 <html lang="en" class="full-height-width">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Novartis GenLite</title>
 
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/styles.css') }}"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Novartis GenLite</title>
 
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-  </head>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
-  <body class="body-layout">
-    <!-- Header -->
-    <header class="header">
-      <div class="header-content">
-        <div class="logo-container">
-          <img
-            src="{{ url_for('static', filename='images/NovartisLogo.svg') }}"
-            alt="velocisLogo"
-            class="logo-image"
-          />
-        </div>
-        <div class="d-flex">
-          <button class="header-buttons">🔔</button>
-          <div class="vl"></div>
-          <button class="header-buttons">🙍</button>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+
+<body class="body-layout">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo-container">
+        <img src="{{ url_for('static', filename='images/NovartisLogo.svg') }}" alt="velocisLogo" class="logo-image" />
+      </div>
+      <div class="d-flex">
+        <button class="header-buttons">🔔</button>
+        <div class="vl"></div>
+        <button class="header-buttons">🙍</button>
+      </div>
+    </div>
+  </header>
+
+  <!--Progress bar -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-auto">
+        <!-- First div with minimum space -->
+        <button class="btn"><strong>&larr; Back</strong></button>
+      </div>
+      <div class="col">
+        <div class="d-flex justify-content-center">
+          <div class="d-flex flex-column align-items-center">
+            <div class="flow-icon-container flow-completed"
+              style="width: 32px; height: 32px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5.45455 13.8182L5.81818 13.8691L9.14182 10.5455C9.07513 10.3012 9.07504 10.0436 9.14154 9.79935C9.20804 9.55509 9.33872 9.33307 9.52 9.15636C10.0873 8.58182 11.0036 8.58182 11.5709 9.15636C11.9564 9.53455 12.08 10.0727 11.9491 10.5455L13.8182 12.4145L14.1818 12.3636C14.3127 12.3636 14.4364 12.3636 14.5455 12.4145L17.1418 9.81818C17.0909 9.70909 17.0909 9.58545 17.0909 9.45455C17.0909 9.06878 17.2442 8.69881 17.5169 8.42603C17.7897 8.15325 18.1597 8 18.5455 8C18.9312 8 19.3012 8.15325 19.574 8.42603C19.8468 8.69881 20 9.06878 20 9.45455C20 9.84031 19.8468 10.2103 19.574 10.4831C19.3012 10.7558 18.9312 10.9091 18.5455 10.9091C18.4145 10.9091 18.2909 10.9091 18.1818 10.8582L15.5855 13.4545C15.6364 13.5636 15.6364 13.6873 15.6364 13.8182C15.6364 14.204 15.4831 14.5739 15.2103 14.8467C14.9376 15.1195 14.5676 15.2727 14.1818 15.2727C13.796 15.2727 13.4261 15.1195 13.1533 14.8467C12.8805 14.5739 12.7273 14.204 12.7273 13.8182L12.7782 13.4545L10.9091 11.5855C10.6764 11.6364 10.4145 11.6364 10.1818 11.5855L6.85818 14.9091L6.90909 15.2727C6.90909 15.6585 6.75584 16.0285 6.48306 16.3012C6.21028 16.574 5.84031 16.7273 5.45455 16.7273C5.06878 16.7273 4.69881 16.574 4.42603 16.3012C4.15325 16.0285 4 15.6585 4 15.2727C4 14.887 4.15325 14.517 4.42603 14.2442C4.69881 13.9714 5.06878 13.8182 5.45455 13.8182Z"
+                  fill="#949499" />
+              </svg>
+            </div>
+            <p class="mt-2 small">Analysis</p>
+          </div>
+          <!-- Line Separator -->
+          <div class="line-separator"></div>
+
+          <div class="d-flex flex-column align-items-center">
+            <div class="flow-icon-container"
+              style="width: 32px; height: 32px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5.45455 13.8182L5.81818 13.8691L9.14182 10.5455C9.07513 10.3012 9.07504 10.0436 9.14154 9.79935C9.20804 9.55509 9.33872 9.33307 9.52 9.15636C10.0873 8.58182 11.0036 8.58182 11.5709 9.15636C11.9564 9.53455 12.08 10.0727 11.9491 10.5455L13.8182 12.4145L14.1818 12.3636C14.3127 12.3636 14.4364 12.3636 14.5455 12.4145L17.1418 9.81818C17.0909 9.70909 17.0909 9.58545 17.0909 9.45455C17.0909 9.06878 17.2442 8.69881 17.5169 8.42603C17.7897 8.15325 18.1597 8 18.5455 8C18.9312 8 19.3012 8.15325 19.574 8.42603C19.8468 8.69881 20 9.06878 20 9.45455C20 9.84031 19.8468 10.2103 19.574 10.4831C19.3012 10.7558 18.9312 10.9091 18.5455 10.9091C18.4145 10.9091 18.2909 10.9091 18.1818 10.8582L15.5855 13.4545C15.6364 13.5636 15.6364 13.6873 15.6364 13.8182C15.6364 14.204 15.4831 14.5739 15.2103 14.8467C14.9376 15.1195 14.5676 15.2727 14.1818 15.2727C13.796 15.2727 13.4261 15.1195 13.1533 14.8467C12.8805 14.5739 12.7273 14.204 12.7273 13.8182L12.7782 13.4545L10.9091 11.5855C10.6764 11.6364 10.4145 11.6364 10.1818 11.5855L6.85818 14.9091L6.90909 15.2727C6.90909 15.6585 6.75584 16.0285 6.48306 16.3012C6.21028 16.574 5.84031 16.7273 5.45455 16.7273C5.06878 16.7273 4.69881 16.574 4.42603 16.3012C4.15325 16.0285 4 15.6585 4 15.2727C4 14.887 4.15325 14.517 4.42603 14.2442C4.69881 13.9714 5.06878 13.8182 5.45455 13.8182Z"
+                  fill="#949499" />
+              </svg>
+            </div>
+            <p class="mt-2 small">Design</p>
+          </div>
+          <!-- Line Separator -->
+          <div class="line-separator"></div>
+
+          <div class="d-flex flex-column align-items-center">
+            <div class="flow-icon-container"
+              style="width: 32px; height: 32px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5.45455 13.8182L5.81818 13.8691L9.14182 10.5455C9.07513 10.3012 9.07504 10.0436 9.14154 9.79935C9.20804 9.55509 9.33872 9.33307 9.52 9.15636C10.0873 8.58182 11.0036 8.58182 11.5709 9.15636C11.9564 9.53455 12.08 10.0727 11.9491 10.5455L13.8182 12.4145L14.1818 12.3636C14.3127 12.3636 14.4364 12.3636 14.5455 12.4145L17.1418 9.81818C17.0909 9.70909 17.0909 9.58545 17.0909 9.45455C17.0909 9.06878 17.2442 8.69881 17.5169 8.42603C17.7897 8.15325 18.1597 8 18.5455 8C18.9312 8 19.3012 8.15325 19.574 8.42603C19.8468 8.69881 20 9.06878 20 9.45455C20 9.84031 19.8468 10.2103 19.574 10.4831C19.3012 10.7558 18.9312 10.9091 18.5455 10.9091C18.4145 10.9091 18.2909 10.9091 18.1818 10.8582L15.5855 13.4545C15.6364 13.5636 15.6364 13.6873 15.6364 13.8182C15.6364 14.204 15.4831 14.5739 15.2103 14.8467C14.9376 15.1195 14.5676 15.2727 14.1818 15.2727C13.796 15.2727 13.4261 15.1195 13.1533 14.8467C12.8805 14.5739 12.7273 14.204 12.7273 13.8182L12.7782 13.4545L10.9091 11.5855C10.6764 11.6364 10.4145 11.6364 10.1818 11.5855L6.85818 14.9091L6.90909 15.2727C6.90909 15.6585 6.75584 16.0285 6.48306 16.3012C6.21028 16.574 5.84031 16.7273 5.45455 16.7273C5.06878 16.7273 4.69881 16.574 4.42603 16.3012C4.15325 16.0285 4 15.6585 4 15.2727C4 14.887 4.15325 14.517 4.42603 14.2442C4.69881 13.9714 5.06878 13.8182 5.45455 13.8182Z"
+                  fill="#949499" />
+              </svg>
+            </div>
+            <p class="mt-2 small">Development</p>
+          </div>
+          <!-- Line Separator -->
+          <div class="line-separator"></div>
+
+          <div class="d-flex flex-column align-items-center">
+            <div class="flow-icon-container"
+              style="width: 32px; height: 32px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5.45455 13.8182L5.81818 13.8691L9.14182 10.5455C9.07513 10.3012 9.07504 10.0436 9.14154 9.79935C9.20804 9.55509 9.33872 9.33307 9.52 9.15636C10.0873 8.58182 11.0036 8.58182 11.5709 9.15636C11.9564 9.53455 12.08 10.0727 11.9491 10.5455L13.8182 12.4145L14.1818 12.3636C14.3127 12.3636 14.4364 12.3636 14.5455 12.4145L17.1418 9.81818C17.0909 9.70909 17.0909 9.58545 17.0909 9.45455C17.0909 9.06878 17.2442 8.69881 17.5169 8.42603C17.7897 8.15325 18.1597 8 18.5455 8C18.9312 8 19.3012 8.15325 19.574 8.42603C19.8468 8.69881 20 9.06878 20 9.45455C20 9.84031 19.8468 10.2103 19.574 10.4831C19.3012 10.7558 18.9312 10.9091 18.5455 10.9091C18.4145 10.9091 18.2909 10.9091 18.1818 10.8582L15.5855 13.4545C15.6364 13.5636 15.6364 13.6873 15.6364 13.8182C15.6364 14.204 15.4831 14.5739 15.2103 14.8467C14.9376 15.1195 14.5676 15.2727 14.1818 15.2727C13.796 15.2727 13.4261 15.1195 13.1533 14.8467C12.8805 14.5739 12.7273 14.204 12.7273 13.8182L12.7782 13.4545L10.9091 11.5855C10.6764 11.6364 10.4145 11.6364 10.1818 11.5855L6.85818 14.9091L6.90909 15.2727C6.90909 15.6585 6.75584 16.0285 6.48306 16.3012C6.21028 16.574 5.84031 16.7273 5.45455 16.7273C5.06878 16.7273 4.69881 16.574 4.42603 16.3012C4.15325 16.0285 4 15.6585 4 15.2727C4 14.887 4.15325 14.517 4.42603 14.2442C4.69881 13.9714 5.06878 13.8182 5.45455 13.8182Z"
+                  fill="#949499" />
+              </svg>
+            </div>
+            <p class="mt-2 small">Testing</p>
+          </div>
+          <!-- Line Separator -->
+          <div class="line-separator"></div>
+
+          <div class="d-flex flex-column align-items-center">
+            <div class="flow-icon-container"
+              style="width: 32px; height: 32px">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5.45455 13.8182L5.81818 13.8691L9.14182 10.5455C9.07513 10.3012 9.07504 10.0436 9.14154 9.79935C9.20804 9.55509 9.33872 9.33307 9.52 9.15636C10.0873 8.58182 11.0036 8.58182 11.5709 9.15636C11.9564 9.53455 12.08 10.0727 11.9491 10.5455L13.8182 12.4145L14.1818 12.3636C14.3127 12.3636 14.4364 12.3636 14.5455 12.4145L17.1418 9.81818C17.0909 9.70909 17.0909 9.58545 17.0909 9.45455C17.0909 9.06878 17.2442 8.69881 17.5169 8.42603C17.7897 8.15325 18.1597 8 18.5455 8C18.9312 8 19.3012 8.15325 19.574 8.42603C19.8468 8.69881 20 9.06878 20 9.45455C20 9.84031 19.8468 10.2103 19.574 10.4831C19.3012 10.7558 18.9312 10.9091 18.5455 10.9091C18.4145 10.9091 18.2909 10.9091 18.1818 10.8582L15.5855 13.4545C15.6364 13.5636 15.6364 13.6873 15.6364 13.8182C15.6364 14.204 15.4831 14.5739 15.2103 14.8467C14.9376 15.1195 14.5676 15.2727 14.1818 15.2727C13.796 15.2727 13.4261 15.1195 13.1533 14.8467C12.8805 14.5739 12.7273 14.204 12.7273 13.8182L12.7782 13.4545L10.9091 11.5855C10.6764 11.6364 10.4145 11.6364 10.1818 11.5855L6.85818 14.9091L6.90909 15.2727C6.90909 15.6585 6.75584 16.0285 6.48306 16.3012C6.21028 16.574 5.84031 16.7273 5.45455 16.7273C5.06878 16.7273 4.69881 16.574 4.42603 16.3012C4.15325 16.0285 4 15.6585 4 15.2727C4 14.887 4.15325 14.517 4.42603 14.2442C4.69881 13.9714 5.06878 13.8182 5.45455 13.8182Z"
+                  fill="#949499" />
+              </svg>
+            </div>
+            <p class="mt-2 small">Deployment</p>
+          </div>
         </div>
       </div>
-    </header>
+    </div>
+  </div>
 
-    <main class="flexmain">
-      <!--Progress bar -->
+  <!--Nav bar -->
+  <ul class="nav justify-content-center border-bottom">
+    <li class="nav-item" id='nav_tab_input' onclick="showTab('tab_input')">Input</li>
+    <li class="nav-item" id='nav_tab_epic' onclick="showTab('tab_epic')">Epic</li>
+    <li class="nav-item" id='nav_tab_feature' onclick="showTab('tab_feature')">Features</li>
+    <li class="nav-item" id='nav_tab_story' onclick="showTab('tab_story')">User Stories</li>
+    <li class="nav-item" id='nav_tab_funcd' onclick="showTab('tab_funcd')">Functional Design</li>
+    <li class="nav-item" id='nav_tab_hld' onclick="showTab('tab_hld')">High Level Design</li>
+    <li class="nav-item" id='nav_tab_lld' onclick="showTab('tab_lld')">Low Level Design</li>
+    <li class="nav-item" id='nav_tab_code' onclick="showTab('tab_code')">Code</li>
+  </ul>
 
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-auto">
-            <!-- First div with minimum space -->
-            <button class="btn"><strong>&larr; Back</strong></button>
+  <main class="flexmain ">
+    <div id="toast-container" style="position: fixed; top: 1rem; right: 1rem; z-index: 1050;"></div>
+
+    <!-- TODO: generalize tab container style -->
+    <!-- during discussion liki wanted to add all elements in side one form -->
+    <form class="flexmain ">
+      <!--input Tab ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+      <div id="tab_input" class="tab-content ">
+        <div class="container-fluid d-flex flex-column full-height-width gap-2 ">
+          <!-- dropdown to select platform  -->
+          <div class="row">
+            <label for="dd_platform" class="form-label col-2">Select Platform</label>
+            <select id="dd_platform" class="form-select col" required onchange="OnDDplatformChange()">
+              <option disabled selected value="">Select Platform</option>
+              <option value="1">Technology</option>
+              <option value="2">Healthcare</option>
+              <option value="3">Finance</option>
+            </select>
           </div>
-          <div class="col">
-            <div class="d-flex justify-content-center">
-              <div class="d-flex flex-column align-items-center">
-                <div
-                  class="d-flex justify-content-center align-items-center border border-2 rounded-circle"
-                  style="width: 32px; height: 32px"
-                >
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5.45455 13.8182L5.81818 13.8691L9.14182 10.5455C9.07513 10.3012 9.07504 10.0436 9.14154 9.79935C9.20804 9.55509 9.33872 9.33307 9.52 9.15636C10.0873 8.58182 11.0036 8.58182 11.5709 9.15636C11.9564 9.53455 12.08 10.0727 11.9491 10.5455L13.8182 12.4145L14.1818 12.3636C14.3127 12.3636 14.4364 12.3636 14.5455 12.4145L17.1418 9.81818C17.0909 9.70909 17.0909 9.58545 17.0909 9.45455C17.0909 9.06878 17.2442 8.69881 17.5169 8.42603C17.7897 8.15325 18.1597 8 18.5455 8C18.9312 8 19.3012 8.15325 19.574 8.42603C19.8468 8.69881 20 9.06878 20 9.45455C20 9.84031 19.8468 10.2103 19.574 10.4831C19.3012 10.7558 18.9312 10.9091 18.5455 10.9091C18.4145 10.9091 18.2909 10.9091 18.1818 10.8582L15.5855 13.4545C15.6364 13.5636 15.6364 13.6873 15.6364 13.8182C15.6364 14.204 15.4831 14.5739 15.2103 14.8467C14.9376 15.1195 14.5676 15.2727 14.1818 15.2727C13.796 15.2727 13.4261 15.1195 13.1533 14.8467C12.8805 14.5739 12.7273 14.204 12.7273 13.8182L12.7782 13.4545L10.9091 11.5855C10.6764 11.6364 10.4145 11.6364 10.1818 11.5855L6.85818 14.9091L6.90909 15.2727C6.90909 15.6585 6.75584 16.0285 6.48306 16.3012C6.21028 16.574 5.84031 16.7273 5.45455 16.7273C5.06878 16.7273 4.69881 16.574 4.42603 16.3012C4.15325 16.0285 4 15.6585 4 15.2727C4 14.887 4.15325 14.517 4.42603 14.2442C4.69881 13.9714 5.06878 13.8182 5.45455 13.8182Z"
-                      fill="#949499"
-                    />
-                  </svg>
-                </div>
-                <p class="mt-2 small">Analysis</p>
-              </div>
-              <!-- Line Separator -->
-              <div class="line-separator"></div>
 
-              <div class="d-flex flex-column align-items-center">
-                <div
-                  class="d-flex justify-content-center align-items-center border border-2 rounded-circle"
-                  style="width: 32px; height: 32px"
-                >
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5.45455 13.8182L5.81818 13.8691L9.14182 10.5455C9.07513 10.3012 9.07504 10.0436 9.14154 9.79935C9.20804 9.55509 9.33872 9.33307 9.52 9.15636C10.0873 8.58182 11.0036 8.58182 11.5709 9.15636C11.9564 9.53455 12.08 10.0727 11.9491 10.5455L13.8182 12.4145L14.1818 12.3636C14.3127 12.3636 14.4364 12.3636 14.5455 12.4145L17.1418 9.81818C17.0909 9.70909 17.0909 9.58545 17.0909 9.45455C17.0909 9.06878 17.2442 8.69881 17.5169 8.42603C17.7897 8.15325 18.1597 8 18.5455 8C18.9312 8 19.3012 8.15325 19.574 8.42603C19.8468 8.69881 20 9.06878 20 9.45455C20 9.84031 19.8468 10.2103 19.574 10.4831C19.3012 10.7558 18.9312 10.9091 18.5455 10.9091C18.4145 10.9091 18.2909 10.9091 18.1818 10.8582L15.5855 13.4545C15.6364 13.5636 15.6364 13.6873 15.6364 13.8182C15.6364 14.204 15.4831 14.5739 15.2103 14.8467C14.9376 15.1195 14.5676 15.2727 14.1818 15.2727C13.796 15.2727 13.4261 15.1195 13.1533 14.8467C12.8805 14.5739 12.7273 14.204 12.7273 13.8182L12.7782 13.4545L10.9091 11.5855C10.6764 11.6364 10.4145 11.6364 10.1818 11.5855L6.85818 14.9091L6.90909 15.2727C6.90909 15.6585 6.75584 16.0285 6.48306 16.3012C6.21028 16.574 5.84031 16.7273 5.45455 16.7273C5.06878 16.7273 4.69881 16.574 4.42603 16.3012C4.15325 16.0285 4 15.6585 4 15.2727C4 14.887 4.15325 14.517 4.42603 14.2442C4.69881 13.9714 5.06878 13.8182 5.45455 13.8182Z"
-                      fill="#949499"
-                    />
-                  </svg>
-                </div>
-                <p class="mt-2 small">Design</p>
-              </div>
-              <!-- Line Separator -->
-              <div class="line-separator"></div>
 
-              <div class="d-flex flex-column align-items-center">
-                <div
-                  class="d-flex justify-content-center align-items-center border border-2 rounded-circle"
-                  style="width: 32px; height: 32px"
-                >
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5.45455 13.8182L5.81818 13.8691L9.14182 10.5455C9.07513 10.3012 9.07504 10.0436 9.14154 9.79935C9.20804 9.55509 9.33872 9.33307 9.52 9.15636C10.0873 8.58182 11.0036 8.58182 11.5709 9.15636C11.9564 9.53455 12.08 10.0727 11.9491 10.5455L13.8182 12.4145L14.1818 12.3636C14.3127 12.3636 14.4364 12.3636 14.5455 12.4145L17.1418 9.81818C17.0909 9.70909 17.0909 9.58545 17.0909 9.45455C17.0909 9.06878 17.2442 8.69881 17.5169 8.42603C17.7897 8.15325 18.1597 8 18.5455 8C18.9312 8 19.3012 8.15325 19.574 8.42603C19.8468 8.69881 20 9.06878 20 9.45455C20 9.84031 19.8468 10.2103 19.574 10.4831C19.3012 10.7558 18.9312 10.9091 18.5455 10.9091C18.4145 10.9091 18.2909 10.9091 18.1818 10.8582L15.5855 13.4545C15.6364 13.5636 15.6364 13.6873 15.6364 13.8182C15.6364 14.204 15.4831 14.5739 15.2103 14.8467C14.9376 15.1195 14.5676 15.2727 14.1818 15.2727C13.796 15.2727 13.4261 15.1195 13.1533 14.8467C12.8805 14.5739 12.7273 14.204 12.7273 13.8182L12.7782 13.4545L10.9091 11.5855C10.6764 11.6364 10.4145 11.6364 10.1818 11.5855L6.85818 14.9091L6.90909 15.2727C6.90909 15.6585 6.75584 16.0285 6.48306 16.3012C6.21028 16.574 5.84031 16.7273 5.45455 16.7273C5.06878 16.7273 4.69881 16.574 4.42603 16.3012C4.15325 16.0285 4 15.6585 4 15.2727C4 14.887 4.15325 14.517 4.42603 14.2442C4.69881 13.9714 5.06878 13.8182 5.45455 13.8182Z"
-                      fill="#949499"
-                    />
-                  </svg>
-                </div>
-                <p class="mt-2 small">Development</p>
-              </div>
-              <!-- Line Separator -->
-              <div class="line-separator"></div>
+          <div class="row flex-grow-1 ">
+            <label class="form-label required col-2">Ecosystem Context</label>
+            <div class="col flex-grow-1 border rounded d-flex flex-column">
+              <textarea id="input_Context" placeholder="Select Industry from the above dropdown panel."
+                oninput="updateCharCount('input_Context', 'WordCount_input_Context')"
+                class="placeholder:text-center border-0 flex-grow-1" style="resize: none; height: 100%"></textarea>
+              <p class="text-end">
+                <span id="WordCount_input_Context" class="">0</span> / 5000
+                Characters
+              </p>
+            </div>
+          </div>
 
-              <div class="d-flex flex-column align-items-center">
-                <div
-                  class="d-flex justify-content-center align-items-center border border-2 rounded-circle"
-                  style="width: 32px; height: 32px"
-                >
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5.45455 13.8182L5.81818 13.8691L9.14182 10.5455C9.07513 10.3012 9.07504 10.0436 9.14154 9.79935C9.20804 9.55509 9.33872 9.33307 9.52 9.15636C10.0873 8.58182 11.0036 8.58182 11.5709 9.15636C11.9564 9.53455 12.08 10.0727 11.9491 10.5455L13.8182 12.4145L14.1818 12.3636C14.3127 12.3636 14.4364 12.3636 14.5455 12.4145L17.1418 9.81818C17.0909 9.70909 17.0909 9.58545 17.0909 9.45455C17.0909 9.06878 17.2442 8.69881 17.5169 8.42603C17.7897 8.15325 18.1597 8 18.5455 8C18.9312 8 19.3012 8.15325 19.574 8.42603C19.8468 8.69881 20 9.06878 20 9.45455C20 9.84031 19.8468 10.2103 19.574 10.4831C19.3012 10.7558 18.9312 10.9091 18.5455 10.9091C18.4145 10.9091 18.2909 10.9091 18.1818 10.8582L15.5855 13.4545C15.6364 13.5636 15.6364 13.6873 15.6364 13.8182C15.6364 14.204 15.4831 14.5739 15.2103 14.8467C14.9376 15.1195 14.5676 15.2727 14.1818 15.2727C13.796 15.2727 13.4261 15.1195 13.1533 14.8467C12.8805 14.5739 12.7273 14.204 12.7273 13.8182L12.7782 13.4545L10.9091 11.5855C10.6764 11.6364 10.4145 11.6364 10.1818 11.5855L6.85818 14.9091L6.90909 15.2727C6.90909 15.6585 6.75584 16.0285 6.48306 16.3012C6.21028 16.574 5.84031 16.7273 5.45455 16.7273C5.06878 16.7273 4.69881 16.574 4.42603 16.3012C4.15325 16.0285 4 15.6585 4 15.2727C4 14.887 4.15325 14.517 4.42603 14.2442C4.69881 13.9714 5.06878 13.8182 5.45455 13.8182Z"
-                      fill="#949499"
-                    />
-                  </svg>
-                </div>
-                <p class="mt-2 small">Testing</p>
-              </div>
-              <!-- Line Separator -->
-              <div class="line-separator"></div>
+          <div class="row flex-grow-1">
+            <label class="form-label required col-2">Scope/Vision/HLR</label>
 
-              <div class="d-flex flex-column align-items-center">
-                <div
-                  class="d-flex justify-content-center align-items-center border border-2 rounded-circle"
-                  style="width: 32px; height: 32px"
-                >
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5.45455 13.8182L5.81818 13.8691L9.14182 10.5455C9.07513 10.3012 9.07504 10.0436 9.14154 9.79935C9.20804 9.55509 9.33872 9.33307 9.52 9.15636C10.0873 8.58182 11.0036 8.58182 11.5709 9.15636C11.9564 9.53455 12.08 10.0727 11.9491 10.5455L13.8182 12.4145L14.1818 12.3636C14.3127 12.3636 14.4364 12.3636 14.5455 12.4145L17.1418 9.81818C17.0909 9.70909 17.0909 9.58545 17.0909 9.45455C17.0909 9.06878 17.2442 8.69881 17.5169 8.42603C17.7897 8.15325 18.1597 8 18.5455 8C18.9312 8 19.3012 8.15325 19.574 8.42603C19.8468 8.69881 20 9.06878 20 9.45455C20 9.84031 19.8468 10.2103 19.574 10.4831C19.3012 10.7558 18.9312 10.9091 18.5455 10.9091C18.4145 10.9091 18.2909 10.9091 18.1818 10.8582L15.5855 13.4545C15.6364 13.5636 15.6364 13.6873 15.6364 13.8182C15.6364 14.204 15.4831 14.5739 15.2103 14.8467C14.9376 15.1195 14.5676 15.2727 14.1818 15.2727C13.796 15.2727 13.4261 15.1195 13.1533 14.8467C12.8805 14.5739 12.7273 14.204 12.7273 13.8182L12.7782 13.4545L10.9091 11.5855C10.6764 11.6364 10.4145 11.6364 10.1818 11.5855L6.85818 14.9091L6.90909 15.2727C6.90909 15.6585 6.75584 16.0285 6.48306 16.3012C6.21028 16.574 5.84031 16.7273 5.45455 16.7273C5.06878 16.7273 4.69881 16.574 4.42603 16.3012C4.15325 16.0285 4 15.6585 4 15.2727C4 14.887 4.15325 14.517 4.42603 14.2442C4.69881 13.9714 5.06878 13.8182 5.45455 13.8182Z"
-                      fill="#949499"
-                    />
-                  </svg>
+            <div class="col flex-grow-1 border rounded d-flex flex-column">
+              <textarea id="input_Scope" placeholder="Select Industry from the above dropdown panel."
+                oninput="updateCharCount('input_Scope', 'WordCount_input_Scope')"
+                class="placeholder:text-center border-0 flex-grow-1" style="resize: none; height: 100%"></textarea>
+              <p class="text-end">
+                <span id="WordCount_input_Scope" class="">0</span> / 5000
+                Characters
+              </p>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-end gap-2">
+            <button type="button" class="btn" data-bs-toggle="tooltip" title="Important Note : The Content generated by artificial intelligence  (AI) tools or
+platforms may contain inaccuracies, errors and omissions. This AI-generated content
+should not be considered a replacement for human expertise, review and judgement.
+Users are urged to verify any information or content derived from AI sources with
+qualified professionals ">
+              ℹ️
+            </button>
+            <button id="btn_gen_epic" class="btn-primary" disabled>
+              Generate Epic
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--epic Tab +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+      <div id="tab_epic" class="tab-content ">
+        <div class="d-flex flex-column full-height-width gap-2">
+          <!-- 1st row -->
+          <div class="d-flex ">
+            <div class="col d-flex justify-content-start gap-2">
+              <label class="form-label">Business Case</label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Application Content
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Scope/Vision/HLR
+              </label>
+            </div>
+            <div class="col d-flex justify-content-end gap-2">
+              <button type="button" class="btn btn-outline-primary">Get Epic Details</button>
+              <button type="button" class="btn btn-outline-danger">Clear Epic Details</button>
+            </div>
+          </div>
+
+          <!-- 2nd row (grows to take available space) -->
+          <div class="flex-grow-1 d-flex gap-1 ">
+            <!-- Left Section: Business Case -->
+            <div class="col d-flex">
+              <div class="card shadow-sm flex-grow-1">
+                <div class="d-flex justify-content-between card-header ">
+                  <h5 class="card-title">Business Case</h5>
+                  <button class="border-0 text-primary btn btn-light col-auto">
+                    Copy
+                  </button>
                 </div>
-                <p class="mt-2 small">Deployment</p>
+                <textarea id="epic_business_context" placeholder=" place holder"
+                  oninput="updateCharCount('epic_business_context', 'WordCount_epic_business_context')"
+                  class="placeholder:text-center border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+                <p class="text-end">
+                  <span id="WordCount_epic_business_context" class="">0</span> / 5000
+                  Characters
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Section: Epic Abstract -->
+            <div class="col d-flex">
+              <div class="card shadow-sm flex-grow-1">
+                <div class="d-flex justify-content-between card-header ">
+                  <h5 class="card-title">Epic Abstract</h5>
+                  <button class="border-0 text-primary btn btn-light col-auto">
+                    Copy
+                  </button>
+                </div>
+                <textarea id="epic_abstract" placeholder="Click on “Copy” to paste your feature here and, then click on
+              “Expand Feature”" oninput="updateCharCount('epic_epic_abstract', 'WordCount_epic_abstract')"
+                  class="placeholder:text-center border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+                <p class="text-end">
+                  <span id="WordCount_epic_abstract" class="">0</span> / 5000
+                  Characters
+                </p>
               </div>
             </div>
           </div>
+
+          <!-- 3rd row -->
+          <div class="d-flex  justify-content-end gap-2">
+            <button type="button" id="btn_gen_epic" class="btn col-auto btn-primary mx-2">Generate Feature</button>
+          </div>
+        </div>
+      </div>
+      
+      <!--feature Tab ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+      <div id="tab_feature" class="tab-content">
+        <div class="container-fluid d-flex flex-column full-height-width gap-1">
+          <!-- 1st row -->
+          <div class="row ">
+            <div class="col d-flex justify-content-start gap-2">
+              <label class="form-label">Selected Inputs</label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Application Content
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Scope/Vision/HLR
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Epic User Story
+              </label>
+            </div>
+            <div class="col d-flex justify-content-end gap-2">
+              <button type="button" class="btn btn-outline-primary">Get Epic Details</button>
+              <button type="button" class="btn btn-outline-danger">Clear Epic Details</button>
+            </div>
+          </div>
+
+          <!-- 2nd row (grows to take available space) -->
+          <div class="row flex-grow-1 gap-2">
+            <!-- Left Section: Business Case -->
+            <div class="col flex-column flex-grow-1 card overflow-auto">
+              <!-- text area 1 -->
+              <div class="row p-2 my-2">
+                <div class="row justify-content-between">
+                  <h5 class="col">&bull; heading</h5>
+                  <button type="button" class="btn btn-link col-auto">Copy</button>
+                </div>
+                <textarea rows="5" class="placeholder:text-center border-0 flex-grow-1" style="resize: none;">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, iure? Tempore, repudiandae a numquam asperiores quibusdam, 
+similique molestiae omnis aut saepe blanditiis nostrum magnam 
+libero hic reprehenderit nesciunt voluptate. Tempore
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus similique dolorum quod accusantium,  Necessitatibus similique dolorum quod accusantium,  Necessitatibus similique dolorum quod accusantium, 
+ea facilis. Quia facilis, libero ab eos eum quo corrupti 
+mollitia inventore repellendus reiciendis ducimus dicta aspernatur!                     
+                  </textarea>
+              </div>
+
+            </div>
+
+            <!-- Right Section: Epic Abstract -->
+            <div class="col d-flex flex-grow-1 card overflow-auto gap-2">
+              <div class="shadow-sm flex-grow-1 d-flex flex-column  row">
+                <div class="d-flex justify-content-between card-header row">
+                  <h5 class="card-title col">Selected feature</h5>
+                </div>
+                <textarea id="feature_selected" placeholder="Click on “Copy” to paste your feature here and, then click on
+                  “Expand Feature”" oninput="updateCharCount('feature_selected', 'WordCount_feature_selected')"
+                  class="placeholder:text-center border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+                <div class="text-end">
+                  <span id="WordCount_feature_selected" class="">0</span> / 5000
+                  Characters
+                  <button type="button" class="btn btn-outline-secondary col-auto">Expand Feature ></button>
+                </div>
+
+              </div>
+
+              <!-- bottom section feature abstract -->
+              <div class="shadow-sm flex-grow-1 d-flex flex-column  row">
+                <div class="d-flex justify-content-between card-header row">
+                  <h5 class="card-title col">Selected feature</h5>
+                  <button class="border-0 text-primary btn btn-light col-auto">
+                    Copy
+                  </button>
+                </div>
+                <textarea id="feature_selected" placeholder="Click on “Copy” to paste your feature here and, then click on
+                  “Expand Feature”" oninput="updateCharCount('feature_selected', 'WordCount_feature_selected')"
+                  class="placeholder:text-center border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+                <div class="text-end">
+                  <span id="WordCount_feature_selected" class="">0</span> / 5000
+                  Characters
+                  <button type="button" class="btn btn-outline-secondary col-auto">Expand Feature ></button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- 4th row -->
+          <div class="row justify-content-end ">
+            <button id="btn_gen_epic" class="col-auto btn-primary" disabled>
+              Generate user Stories
+            </button>
+          </div>
         </div>
       </div>
 
-      <!--Nav bar -->
-      <ul class="nav justify-content-center border-bottom">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Input</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Epic</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">User Stories</a>
-        </li>
-      </ul>
-
-      <!--input Tab -->
-      <form
-        id="tab_input_content"
-        class="tab-content active container-fluid flex-column gap-2 pt-2"
-      >
-        <!-- dropdown to select platform  -->
-        <div class="row">
-          <label for="dd_platform" class="form-label col-2"
-            >Select Platform</label
-          >
-          <select
-            id="dd_platform"
-            class="form-select col"
-            required
-            onchange="OnDDplatformChange()"
-          >
-            <option disabled selected value="">Select Platform</option>
-            <option value="1">Technology</option>
-            <option value="2">Healthcare</option>
-            <option value="3">Finance</option>
-          </select>
-        </div>
-
-        <div class="row flex-grow-1">
-          <label class="form-label required col-2">Ecosystem Context</label>
-
-          <div class="col flex-grow-1 border rounded d-flex flex-column">
-            <textarea
-              id="input_Context"
-              placeholder="Select Industry from the above dropdown panel."
-              oninput="updateCharCount('input_Context', 'WordCount_input_Context')"
-              class="placeholder:text-center border-0 flex-grow-1"
-              style="resize: none; height: 100%"
-            ></textarea>
-            <p class="text-end">
-              <span id="WordCount_input_Context" class="">0</span> / 5000
-              Characters
-            </p>
+      <!--user stories Tab ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+      <div id="tab_story" class="tab-content">
+        <div class="container-fluid d-flex flex-column full-height-width gap-1">
+          <!-- 1st row -->
+          <div class="row ">
+            <div class="col d-flex justify-content-start gap-2">
+              <label class="form-label">Selected Inputs</label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Application Content
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Scope/Vision/HLR
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Epic User Story
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Feature User Story
+              </label>
+            </div>
+            <div class="col d-flex justify-content-end gap-2">
+              <button type="button" class="btn btn-outline-primary">Get Epic Details</button>
+              <button type="button" class="btn btn-outline-danger">Clear Epic Details</button>
+            </div>
           </div>
-        </div>
 
-        <div class="row flex-grow-1">
-          <label class="form-label required col-2">Scope/Vision/HLR</label>
+          <!-- 2nd row (grows to take available space) -->
+          <div class="row flex-grow-1 gap-2">
+            <!-- Left Section: Business Case -->
+            <div class="col flex-column card flex-grow-1 overflow-auto">
+              <!-- text area 1 -->
+              <div class="row p-2 my-2">
+                <div class="row justify-content-between">
+                  <h5 class="col">&bull; heading</h5>
+                  <button type="button" class="btn btn-link col-auto">Copy</button>
+                </div>
+                <textarea rows="5" class="placeholder:text-center border-0 flex-grow-1" style="resize: none;">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, iure? Tempore, repudiandae a numquam asperiores quibusdam, 
+similique molestiae omnis aut saepe blanditiis nostrum magnam 
+libero hic reprehenderit nesciunt voluptate. Tempore
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus similique dolorum quod accusantium,  Necessitatibus similique dolorum quod accusantium,  Necessitatibus similique dolorum quod accusantium, 
+ea facilis. Quia facilis, libero ab eos eum quo corrupti 
+mollitia inventore repellendus reiciendis ducimus dicta aspernatur!                     
+                  </textarea>
+              </div>
+              <!-- text area 1 -->
+              <div class="row p-2 my-2">
+                <div class="row justify-content-between">
+                  <h5 class="col">&bull; heading</h5>
+                  <button type="button" class="btn btn-link col-auto"
+                    onclick="copyToClipboard('userStory1')">Copy</button>
+                </div>
+                <textarea rows="5" id="userStory1" class="placeholder:text-center border-0 flex-grow-1"
+                  style="resize: none;">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, iure? Tempore, repudiandae a numquam asperiores quibusdam, 
+similique molestiae omnis aut saepe blanditiis nostrum magnam 
+libero hic reprehenderit nesciunt voluptate. Tempore
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus similique dolorum quod accusantium,  Necessitatibus similique dolorum quod accusantium,  Necessitatibus similique dolorum quod accusantium, 
+ea facilis. Quia facilis, libero ab eos eum quo corrupti 
+mollitia inventore repellendus reiciendis ducimus dicta aspernatur!                     
+                  </textarea>
+              </div>
 
-          <div class="col flex-grow-1 border rounded d-flex flex-column">
-            <textarea
-              id="input_Scope"
-              placeholder="Select Industry from the above dropdown panel."
-              oninput="updateCharCount('input_Scope', 'WordCount_input_Scope')"
-              class="placeholder:text-center border-0 flex-grow-1"
-              style="resize: none; height: 100%"
-            ></textarea>
-            <p class="text-end">
-              <span id="WordCount_input_Scope" class="">0</span> / 5000
-              Characters
-            </p>
+            </div>
+
+            <!-- Right Section: Epic Abstract -->
+            <div class="col d-flex flex-grow-1 card overflow-auto gap-2">
+              <div class="shadow-sm flex-grow-1 d-flex flex-column  row">
+                <div class="d-flex justify-content-between card-header row">
+                  <h5 class="card-title col">Selected User Stories</h5>
+                </div>
+                <textarea id="feature_selected" placeholder="Click on “Copy” to paste your feature here and, then click on
+                  “Expand Feature”" oninput="updateCharCount('feature_selected', 'WordCount_feature_selected')"
+                  class="placeholder:text-center border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+                <div class="text-end">
+                  <span id="WordCount_feature_selected" class="">0</span> / 5000
+                  Characters
+                  <button type="button" class="btn btn-outline-secondary col-auto">Expand User Story ></button>
+                </div>
+
+              </div>
+
+              <!-- bottom section User Story Abstract -->
+              <div class="shadow-sm flex-grow-1 d-flex flex-column  row">
+                <div class="d-flex justify-content-between card-header row">
+                  <h5 class="card-title col">User Story Abstract</h5>
+                  <button class="border-0 text-primary btn btn-light col-auto">
+                    Copy
+                  </button>
+                </div>
+                <textarea id="feature_selected" placeholder="Click on “Copy” to paste your feature here and, then click on
+                  “Expand Feature”" oninput="updateCharCount('feature_selected', 'WordCount_feature_selected')"
+                  class="placeholder:text-center border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+                <div class="text-end">
+                  <span id="WordCount_feature_selected" class="">0</span> / 5000 Characters
+                </div>
+              </div>
+
+              <!-- bottom section request id -->
+              <div class="shadow-sm d-flex flex-column row">
+                <div class="d-flex justify-content-between card-header row">
+                  <h5 class="card-title col">Registered User Request ID</h5>
+                  <button class="border-0 text-primary btn btn-light col-auto">
+                    Copy
+                  </button>
+                </div>
+                <textarea id="feature_selected" class="border-0" rows="1" style="resize: none;"></textarea>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="d-flex justify-content-end">
-          <button id="btn_gen_epic" class="btn-primary" disabled>
-            Generate Epic
-          </button>
-        </div>
-      </form>
-      <!--epic Tab -->
-      <!-- -->
-      <!-- -->
-      <!-- -->
-      <!-- -->
-      <!-- -->
-      <!-- -->
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-links">
-          <a href="#" class="footer-link">Privacy Policy</a>
-          <a href="#" class="footer-link">Terms & Conditions</a>
-          <a href="#" class="footer-link">Support</a>
-        </div>
-        <div class="footer-rights">
-          ©2024 All Rights Reserved | Version: 0.01
+          <!-- 4th row -->
+          <div class="row justify-content-end ">
+            <button id="btn_gen_epic" class="col-auto btn-primary" disabled>
+              Generate user Stories
+            </button>
+          </div>
         </div>
       </div>
-    </footer>
-  </body>
+
+      <!-- Functional Design ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+      <div id="tab_funcd" class="tab-content">
+        <div class="d-flex flex-column full-height-width gap-2">
+          <!-- row 1 with check boxes----------- -->
+          <div class=" d-flex">
+            <div class="col d-flex justify-content-start gap-2">
+              <label class="form-label">Selected Inputs</label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Application Content
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Scope/Vision/HLR
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Epic User Story
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Feature User Story
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Selected User Story
+              </label>
+            </div>
+            <button type="button" class="btn btn-outline-danger col-auto">Clear Functional Design Details</button>
+
+          </div>
+          <!-- row 2 with 3 column divs----------- -->
+          <div class=" flex-grow-1 d-flex gap-1">
+            <!-- col-1 -->
+            <div class=" col flex-grow-1 d-flex flex-col card shadow-sm flex-grow-1">
+              <div class="d-flex justify-content-between card-header ">
+                <div>
+                  <h5 class="card-title">Functional Design-UI</h5>
+                </div>
+                <div>
+                  <button class="border-0 text-primary btn btn-light col-auto">Download</button>
+                  <button class="border-0 text-primary btn btn-light col-auto">Copy</button>
+                </div>
+
+              </div>
+              <textarea id="" class="border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+            </div>
+            <!-- col-2 -->
+            <div class=" col flex-grow-1 d-flex flex-col card shadow-sm flex-grow-1">
+              <div class="d-flex justify-content-between card-header ">
+                <div>
+                  <h5 class="card-title">Functional Design-Services</h5>
+                </div>
+                <div>
+                  <button class="border-0 text-primary btn btn-light col-auto">Download</button>
+                  <button class="border-0 text-primary btn btn-light col-auto">Copy</button>
+                </div>
+
+              </div>
+              <textarea id="" class="border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+            </div>
+            <!-- col-3 -->
+            <div class=" col flex-grow-1 d-flex flex-col card shadow-sm flex-grow-1">
+              <div class="d-flex justify-content-between card-header ">
+                <div>
+                  <h5 class="card-title">Functional Design-Data</h5>
+                </div>
+                <div>
+                  <button class="border-0 text-primary btn btn-light col-auto">Download</button>
+                  <button class="border-0 text-primary btn btn-light col-auto">Copy</button>
+                </div>
+
+              </div>
+              <textarea id="" class="border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+            </div>
+          </div>
+          <!-- 3rd row containing buttons -->
+          <div class="d-flex  justify-content-end">
+            <button type="button" class="btn btn-outline-primary col-auto mx-2">Primary</button>
+            <button type="button" id="btn_gen_epic" class="btn col-auto btn-primary mx-2">Generate High Level
+              Design</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- High Level Design ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+      <div id="tab_hld" class="tab-content">
+        <div class="d-flex flex-column full-height-width gap-2">
+          <!-- row 1 with check boxes----------- -->
+          <div class=" d-flex">
+            <div class="col d-flex justify-content-start gap-2">
+              <label class="form-label">Selected Inputs</label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Application Content
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Scope/Vision/HLR
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Epic User Story
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Feature User Story
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Selected User Story
+              </label>
+            </div>
+            <button type="button" class="btn btn-outline-danger col-auto">Clear High Level Design Details</button>
+
+          </div>
+          <!-- row 2 with 3 column divs----------- -->
+          <div class=" flex-grow-1 d-flex gap-1">
+            <!-- col-1 -->
+            <div class=" col flex-grow-1 d-flex flex-col card shadow-sm flex-grow-1">
+              <div class="d-flex justify-content-between card-header ">
+                <div>
+                  <h5 class="card-title">High Level Design-UI</h5>
+                </div>
+                <div>
+                  <button class="border-0 text-primary btn btn-light col-auto">Download</button>
+                  <button class="border-0 text-primary btn btn-light col-auto">Copy</button>
+                </div>
+
+              </div>
+              <textarea id="" class="border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+            </div>
+            <!-- col-2 -->
+            <div class=" col flex-grow-1 d-flex flex-col card shadow-sm flex-grow-1">
+              <div class="d-flex justify-content-between card-header ">
+                <div>
+                  <h5 class="card-title">High Level Design-Services</h5>
+                </div>
+                <div>
+                  <button class="border-0 text-primary btn btn-light col-auto">Download</button>
+                  <button class="border-0 text-primary btn btn-light col-auto">Copy</button>
+                </div>
+
+              </div>
+              <textarea id="" class="border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+            </div>
+            <!-- col-3 -->
+            <div class=" col flex-grow-1 d-flex flex-col card shadow-sm flex-grow-1">
+              <div class="d-flex justify-content-between card-header ">
+                <div>
+                  <h5 class="card-title">High Level Design-Data</h5>
+                </div>
+                <div>
+                  <button class="border-0 text-primary btn btn-light col-auto">Download</button>
+                  <button class="border-0 text-primary btn btn-light col-auto">Copy</button>
+                </div>
+
+              </div>
+              <textarea id="" class="border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+            </div>
+          </div>
+          <!-- 3rd row containing buttons -->
+          <div class="d-flex  justify-content-end">
+            <button type="button" class="btn btn-outline-primary col-auto mx-2">Primary</button>
+            <button type="button" id="btn_gen_epic" class="btn col-auto btn-primary mx-2">Generate High Level
+              Design</button>
+          </div>
+        </div>
+
+      </div>
+      <!-- Low Level Design ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+      <div id="tab_lld" class="tab-content">
+        <div class="d-flex flex-column full-height-width gap-2">
+          <!-- row 1 with check boxes----------- -->
+          <div class=" d-flex">
+            <div class="col d-flex justify-content-start gap-2">
+              <label class="form-label">Selected Inputs</label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Application Content
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Scope/Vision/HLR
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Epic User Story
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Feature User Story
+              </label>
+              <label class="">
+                <input class="form-check-input" type="checkbox" value="" id="">
+                Selected User Story
+              </label>
+            </div>
+            <button type="button" class="btn btn-outline-danger col-auto">Clear Low Level Design Details</button>
+
+          </div>
+          <!-- row 2 with 3 column divs----------- -->
+          <div class=" flex-grow-1 d-flex gap-1">
+            <!-- col-1 -->
+            <div class=" col flex-grow-1 d-flex flex-col card shadow-sm flex-grow-1">
+              <div class="d-flex justify-content-between card-header ">
+                <div>
+                  <h5 class="card-title">Low Level Design-UI</h5>
+                </div>
+                <div>
+                  <button class="border-0 text-primary btn btn-light col-auto">Download</button>
+                  <button class="border-0 text-primary btn btn-light col-auto">Copy</button>
+                </div>
+
+              </div>
+              <textarea id="" class="border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+            </div>
+            <!-- col-2 -->
+            <div class=" col flex-grow-1 d-flex flex-col card shadow-sm flex-grow-1">
+              <div class="d-flex justify-content-between card-header ">
+                <div>
+                  <h5 class="card-title">Low Level Design-Services</h5>
+                </div>
+                <div>
+                  <button class="border-0 text-primary btn btn-light col-auto">Download</button>
+                  <button class="border-0 text-primary btn btn-light col-auto">Copy</button>
+                </div>
+
+              </div>
+              <textarea id="" class="border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+            </div>
+            <!-- col-3 -->
+            <div class=" col flex-grow-1 d-flex flex-col card shadow-sm flex-grow-1">
+              <div class="d-flex justify-content-between card-header ">
+                <div>
+                  <h5 class="card-title">Low Level Design-Data</h5>
+                </div>
+                <div>
+                  <button class="border-0 text-primary btn btn-light col-auto">Download</button>
+                  <button class="border-0 text-primary btn btn-light col-auto">Copy</button>
+                </div>
+
+              </div>
+              <textarea id="" class="border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+            </div>
+          </div>
+          <!-- 3rd row containing buttons -->
+          <div class="d-flex  justify-content-end">
+            <button type="button" class="btn btn-outline-primary col-auto mx-2">Download</button>
+            <button type="button" id="btn_gen_epic" class="btn col-auto btn-primary mx-2">Generate Low Level
+              Design</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Code Tab++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+      <div id="tab_code" class="tab-content">
+        <div class="d-flex flex-column full-height-width gap-2">
+          <!-- row 1 with check boxes----------- -->
+          <div class=" d-flex  justify-content-between ">
+            <div class="d-flex  gap-2 col-4">
+              <label for="dd_platform" class="form-label d-flex col-auto required">UI Code Language </label>
+              <select id="dd_platform" required class="form-select " required onchange="OnDDplatformChange()">
+                <option disabled selected value="">Select UI Code Language</option>
+                <option value="1">HTML</option>
+                <option value="2">Angular</option>
+                <option value="3">Vue JS</option>
+                <option value="4">React Js</option>
+              </select>
+            </div>
+
+
+            <div class="d-flex  gap-2 col-4">
+              <label for="dd_platform" class="form-label d-flex col-auto required">Service Code Language </label>
+              <select id="dd_platform" required class="form-select" required onchange="OnDDplatformChange()">
+                <option disabled selected value="">Select Service Code Language</option>
+                <option value="1">Python</option>
+                <option value="2">Java</option>
+                <option value="3">Go</option>
+                <option value="4">JavaScript</option>
+                <option value="5">C#</option>
+                <option value="6">Ruby</option>
+                <option value="7">PHP</option>
+                <option value="8">Swift</option>
+                <option value="9">Kotlin</option>
+                <option value="10">TypeScript</option>
+              </select>
+            </div>
+
+          </div>
+          <!-- row 2 with 3 column divs----------- -->
+          <div class=" flex-grow-1 d-flex gap-1">
+            <!-- col-1 -->
+            <div class=" col flex-grow-1 d-flex flex-col card shadow-sm flex-grow-1">
+              <div class="d-flex justify-content-between card-header ">
+                <div>
+                  <h5 class="card-title">Test Plan</h5>
+                </div>
+                <div>
+                  <button class="border-0 text-primary btn btn-light col-auto">Download</button>
+                  <button class="border-0 text-primary btn btn-light col-auto">Copy</button>
+                </div>
+
+              </div>
+              <textarea id="" class="border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+            </div>
+            <!-- col-2 -->
+            <div class=" col flex-grow-1 d-flex flex-col card shadow-sm flex-grow-1">
+              <div class="d-flex justify-content-between card-header ">
+                <div>
+                  <h5 class="card-title">Test Cases</h5>
+                </div>
+                <div>
+                  <button class="border-0 text-primary btn btn-light col-auto">Download</button>
+                  <button class="border-0 text-primary btn btn-light col-auto">Copy</button>
+                </div>
+
+              </div>
+              <textarea id="" class="border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+            </div>
+            <!-- col-3 -->
+            <div class=" col flex-grow-1 d-flex flex-col card shadow-sm flex-grow-1">
+              <div class="d-flex justify-content-between card-header ">
+                <div>
+                  <h5 class="card-title">Test Script</h5>
+                </div>
+                <div>
+                  <button class="border-0 text-primary btn btn-light col-auto">Download</button>
+                  <button class="border-0 text-primary btn btn-light col-auto">Copy</button>
+                </div>
+
+              </div>
+              <textarea id="" class="border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+            </div>
+          </div>
+          <!-- 3rd row containing buttons -->
+          <div class="d-flex  justify-content-end">
+            <!-- <button type="button" class="btn btn-outline-primary col-auto mx-2">Download</button> -->
+            <button type="button" id="btn_gen_epic" class="btn col-auto btn-primary mx-2">Generate Manual
+              Testing</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    </form>
+  </main>
+  <script>
+    showTab('tab_input');
+    enableToolTip();
+
+  </script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms & Conditions</a>
+        <a href="#" class="footer-link">Support</a>
+      </div>
+      <div class="footer-rights">
+        ©2024 All Rights Reserved | Version: 0.01
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>

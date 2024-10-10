@@ -1,3 +1,17 @@
+```
+ cd .\Flask\
+venv\Scripts\activate
+cd .\app\
+python app.py
+```
+
+
+
+
+
+
+
+
 Creating a fully packaged Flask application involves organizing the project structure, managing dependencies, setting up configuration files, and ensuring your app is ready for deployment. Below is a step-by-step guide on how to do that.
 
 ### **Step-by-Step Guide to Create a Fully Packaged Flask Application**

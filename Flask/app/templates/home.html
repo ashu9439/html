@@ -1,154 +1,208 @@
 <!DOCTYPE html>
 <html lang="en" class="full-height-width">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Novartis GenLite</title>
 
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-</head>
+  </head>
 
-<body class="body-layout">
+  <body class="body-layout">
     <!-- Header -->
     <header class="header">
-        <div class="header-content">
-            <img src="{{ url_for('static', filename='images/NovartisLogo.svg') }}" alt="velocisLogo"
-                    class="logo-image" style="width: 400px; height: auto;"/>
-            <div class="d-flex">
-                <button class="header-buttons">🔔</button>
-                <div class="vl"></div>
-                <button class="header-buttons">🙍</button>
-            </div>
+      <div class="header-content">
+        <img
+          src="{{ url_for('static', filename='images/NovartisLogo.svg') }}"
+          alt="velocisLogo"
+          class="logo-image"
+          style="width: 400px; height: auto"
+        />
+        <div class="d-flex">
+          <button class="header-buttons">🔔</button>
+          <div class="vl"></div>
+          <button class="header-buttons">🙍</button>
         </div>
+      </div>
     </header>
 
-    <main class="flexmain container-fluid d-flex flex-column justify-content-around bakgroundImg"
-        style="background-image: url('{{ url_for('static', filename='images/Bg.svg') }}'); color: white;">
-        <!-- 1st div with welcome and animation -->
-        <div class="d-flex justify-content-between px-3">
-            <div class="col-7">
-                <img src="{{ url_for('static', filename='images/velocisLogoWhite.svg') }}" alt="velocisLogo" style="width: 300px; height: auto; margin-bottom: 2rem;" />
-                <h1 class="">Welcome Geetika!</h1>
+    <main
+      class="flexmain container-fluid d-flex flex-column justify-content-around bakgroundImg"
+      style="background-image: url('{{ url_for('static', filename='images/Bg.svg') }}'); color: white;"
+    >
+      <!-- 1st div with welcome and animation -->
+      <div class="d-flex justify-content-between px-3">
+        <div class="col-7">
+          <img
+            src="{{ url_for('static', filename='images/velocisLogoWhite.svg') }}"
+            alt="velocisLogo"
+            style="width: 300px; height: auto; margin-bottom: 2rem"
+          />
+          <h1 class="">Welcome Geetika!</h1>
 
-                <p class="mt-4 text-gray-300">
-                    Novartis’s GenAI-Powered TDLC Accelerator Platform that serves as transformative AI assistant
-                    empowering business and technology stakeholders involved. By harnessing the capabilities of LLM,
-                    this accelerator platform streamlines and enhances each stage of development process, transforming
-                    textual business intent into fully functional applications (products).
-                </p>
-                <button type="button" class="btn btn-light">
-                    <span>Demo Video</span>
-                </button>
-
-            </div>
-            <div id="lottie-animation" class="col-2"></div>
+          <p class="mt-4 text-gray-300">
+            Novartis’s GenAI-Powered TDLC Accelerator Platform that serves as
+            transformative AI assistant empowering business and technology
+            stakeholders involved. By harnessing the capabilities of LLM, this
+            accelerator platform streamlines and enhances each stage of
+            development process, transforming textual business intent into fully
+            functional applications (products).
+          </p>
+          <button type="button" class="btn btn-light">
+            <span
+              >Demo Video
+              <svg
+                width="15"
+                height="14"
+                viewBox="0 0 15 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.4987 0.333496C9.26681 0.333496 10.9625 1.03588 12.2127 2.28612C13.463 3.53636 14.1654 5.23205 14.1654 7.00016C14.1654 8.76827 13.463 10.464 12.2127 11.7142C10.9625 12.9645 9.26681 13.6668 7.4987 13.6668C5.73059 13.6668 4.0349 12.9645 2.78465 11.7142C1.53441 10.464 0.832031 8.76827 0.832031 7.00016C0.832031 5.23205 1.53441 3.53636 2.78465 2.28612C4.0349 1.03588 5.73059 0.333496 7.4987 0.333496ZM2.08203 7.00016C2.08203 8.43675 2.65271 9.8145 3.66854 10.8303C4.68436 11.8461 6.06211 12.4168 7.4987 12.4168C8.93529 12.4168 10.313 11.8461 11.3289 10.8303C12.3447 9.8145 12.9154 8.43675 12.9154 7.00016C12.9154 5.56357 12.3447 4.18582 11.3289 3.17C10.313 2.15418 8.93529 1.5835 7.4987 1.5835C6.06211 1.5835 4.68436 2.15418 3.66854 3.17C2.65271 4.18582 2.08203 5.56357 2.08203 7.00016ZM6.14786 4.68933L9.7012 6.82183C9.73191 6.84037 9.75731 6.86654 9.77493 6.89778C9.79256 6.92902 9.80183 6.96429 9.80183 7.00016C9.80183 7.03604 9.79256 7.0713 9.77493 7.10255C9.75731 7.13379 9.73191 7.15995 9.7012 7.1785L6.14786 9.311C6.11627 9.33003 6.08018 9.34033 6.0433 9.34085C6.00641 9.34137 5.97005 9.33209 5.93793 9.31395C5.90581 9.29582 5.87908 9.26947 5.86047 9.23762C5.84187 9.20577 5.83205 9.16955 5.83203 9.13266V4.8685C5.8319 4.83154 5.84161 4.79521 5.86016 4.76324C5.87871 4.73127 5.90542 4.70481 5.93757 4.68658C5.96971 4.66834 6.00613 4.65899 6.04309 4.65947C6.08004 4.65995 6.11621 4.67026 6.14786 4.68933Z"
+                  fill="#3A66AA"
+                />
+              </svg>
+            </span>
+          </button>
         </div>
-        <!-- 2nd div with 3 glass cards -->
-        <div class="d-flex justify-content-between container-fluid gap-3" >
-            <!-- glassbox-1 -->
-            <div class="glassbg col">
-                <div class="d-flex ">
-                    <!-- Placeholder for Icon -->
-                    <img src="{{ url_for('static', filename='images/glass1icon.svg') }}" alt="icon1" class="" />
-                    <!-- Title -->
-                    <h2 class="">T(S)DLC Accelerator</h2>
-                </div>
+        <div id="lottie-animation" class="col-2"></div>
+      </div>
+      <!-- 2nd div with 3 glass cards -->
+      <div class="d-flex justify-content-between gap-5">
+        <!-- glassbox-1 -->
+        <div class="glassbg col d-flex flex-column">
+          <div class="d-flex">
+            <!-- Placeholder for Icon -->
+            <img
+              src="{{ url_for('static', filename='images/glass1icon.svg') }}"
+              alt="icon1"
+              class=""
+            />
+            <!-- Title -->
+            <h3 class="">T(S)DLC Accelerator</h3>
+          </div>
 
-                <p class="">
-                    Technology / Software Delivery Life Cycle Accelerator to speed up
-                    prototyping​
-                </p>
+          <p class="flex-grow-1">
+            Technology / Software Delivery Life Cycle Accelerator to speed up
+            prototyping​
+          </p>
 
-                <button type="button" class="btn btn-light" onclick="loadPage('input')"> 
-                    Open
-                </button>
-                <a href="#" style="color: white;" class="">
-                    Learn More >
-                </a>
-            </div>
-
-            <!-- glassbox-2 -->
-            <div class="glassbg col">
-                <div class="d-flex ">
-                    <!-- Placeholder for Icon -->
-                    <img src="{{ url_for('static', filename='images/glass2icon.svg') }}" alt="icon1" class="" />
-                    <!-- Title -->
-                    <h2 class="">Smart Template Filling</h2>
-                </div>
-
-                <p class="">
-                    Streamlining project document(s) creation across technology functions​
-                </p>
-
-                <button type="button" class="btn btn-light">
-                    Open
-                </button>
-                <a href="#" style="color: white;" class="">
-                    Learn More >
-                </a>
-            </div>
-
-            <!-- glassbox-3 -->
-            <div class="glassbg col">
-                <div class="d-flex ">
-                    <!-- Placeholder for Icon -->
-                    <img src="{{ url_for('static', filename='images/glass3icon.svg') }}" alt="icon1" class="" />
-                    <!-- Title -->
-                    <h2 class="">Persona Navigator</h2>
-                </div>
-
-                <p class="">
-                    Your personal assistant to guide you through your role in technology delivery in Novartis ​
-                </p>
-
-                <button type="button" class="btn btn-light">
-                    Open
-                </button>
-                <a href="#" style="color: white;" class="">
-                    Learn More >
-                </a>
-            </div>
+          <div>
+            <button
+              type="button"
+              class="btn btn-light"
+              onclick="loadPage('input')"
+            >
+              Open
+            </button>
+            <a href="#" style="color: white" class=""> Learn More > </a>
+          </div>
         </div>
 
+        <!-- glassbox-2 -->
+        <div class="glassbg col d-flex flex-column">
+          <div class="d-flex">
+            <!-- Placeholder for Icon -->
+            <img
+              src="{{ url_for('static', filename='images/glass2icon.svg') }}"
+              alt="icon1"
+              class=""
+            />
+            <!-- Title -->
+            <h3 class="">Smart Template Filling</h3>
+          </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
-        <script>
-            // Initialize the animation
-            var animation = lottie.loadAnimation({
-                container: document.getElementById("lottie-animation"), // the dom element that will contain the animation
-                renderer: "svg", // render the animation as SVG
-                loop: true, // loop the animation
-                autoplay: true, // automatically play the animation
-                path: "{{ url_for('static', filename='images/boxAnim.json') }}", // the path to the animation .json file
-            });
+          <p class=" flex-grow-1">
+            Streamlining project document(s) creation across technology
+            functions​
+          </p>
 
-            // animation.setSpeed(1.5);
-            // animation.play();
-            // animation.stop();
-            // animation.pause();
-        </script>
+          <div>
+            <button
+              type="button"
+              class="btn btn-light"
+              onclick="loadPage('input')"
+            >
+              Open
+            </button>
+            <a href="#" style="color: white" class=""> Learn More > </a>
+          </div>
+        </div>
+
+        <!-- glassbox-3 -->
+        <div class="glassbg col d-flex flex-column">
+          <div class="d-flex">
+            <!-- Placeholder for Icon -->
+            <img
+              src="{{ url_for('static', filename='images/glass3icon.svg') }}"
+              alt="icon1"
+              class=""
+            />
+            <!-- Title -->
+            <h3 class="">Persona Navigator</h3>
+          </div>
+
+          <p class="flex-grow-1">
+            Your personal assistant to guide you through your role in technology
+            delivery in Novartis ​
+          </p>
+
+          <div>
+            <button
+              type="button"
+              class="btn btn-light"
+              onclick="loadPage('input')"
+            >
+              Open
+            </button>
+            <a href="#" style="color: white" class=""> Learn More > </a>
+          </div>
+        </div>
+      </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+      <script>
+        // Initialize the animation
+        var animation = lottie.loadAnimation({
+          container: document.getElementById("lottie-animation"), // the dom element that will contain the animation
+          renderer: "svg", // render the animation as SVG
+          loop: true, // loop the animation
+          autoplay: true, // automatically play the animation
+          path: "{{ url_for('static', filename='images/boxAnim.json') }}", // the path to the animation .json file
+        });
+
+        // animation.setSpeed(1.5);
+        // animation.play();
+        // animation.stop();
+        // animation.pause();
+      </script>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#" class="footer-link">Privacy Policy</a>
-                <a href="#" class="footer-link">Terms & Conditions</a>
-                <a href="#" class="footer-link">Support</a>
-            </div>
-            <div class="footer-rights">
-                ©2024 All Rights Reserved | Version: 0.01
-            </div>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms & Conditions</a>
+          <a href="#" class="footer-link">Support</a>
         </div>
+        <div class="footer-rights">
+          ©2024 All Rights Reserved | Version: 0.01
+        </div>
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>

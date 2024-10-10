@@ -59,6 +59,29 @@ function copyToClipboard(textBoxId) {
     });
 }
 
+
+//html to append or prepend
+ 
+function prependHtmlToBtnContainers(query,htmlToPrepend) {
+  // Select all elements with the class "btn-container"
+  const btnContainers = document.querySelectorAll(query);
+
+  // Loop through each element and prepend the HTML
+  btnContainers.forEach(function(container) {
+    container.innerHTML = htmlToPrepend + container.innerHTML; // Prepend the HTML
+  });
+}
+
+function appendHtmlToBtnContainers(query,htmlToappend) {
+  // Select all elements with the class "btn-container"
+  const btnContainers = document.querySelectorAll(query);
+
+  // Loop through each element and prepend the HTML
+  btnContainers.forEach(function(container) {
+    container.innerHTML = container.innerHTML + htmlToappend; // Prepend the HTML
+  });
+}
+
 // show and hide tabs=========================================================================================================================
 
 function showTab(TabName) {

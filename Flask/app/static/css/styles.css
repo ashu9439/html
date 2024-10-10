@@ -5,44 +5,56 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Importing the font */
+@font-face {
+  font-family: "Volta Modern Display";
+  src: url("path/to/VoltaModernDisplay.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary-blue: rgba(58, 102, 170, 1); /* Define your custom color */
+  --primary-blue-30: rgba(58, 103, 170, 0.3);
+  --red: rgba(190, 104, 101, 1);
+  --red-30: rgba(190, 104, 101, 0.3);
+  
+
+  /* bs override======================== */
+  --bs-primary: rgba(58, 102, 170, 1);
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
 /* Custom styles */
 body {
+  font-family: "Volta Modern Display", sans-serif;
   font-family: Arial, sans-serif;
 }
 
-.full-height-width {
+/* .full-height-width {
   height: 100%;
   width: 100%;
+} */
+
+.progressbar {
+  padding: 5px 0px;
+  background: linear-gradient(to bottom, rgba(38, 132, 247, 0.381), white 20%);
 }
 
+/* vertical line------- */
 .vl {
   border-left: 1px solid rgb(188, 191, 188);
   margin: 0px 4px;
 }
 
-body.body-layout {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
 
-.header {
-  background-color: #f7fafc;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-}
 
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1.5rem;
-  margin: 0 auto;
-}
+
 
 .header-buttons {
   background-color: white;
@@ -61,7 +73,7 @@ body.body-layout {
 .footer {
   background-color: #f7fafc;
   padding: 1rem 0;
-  position: sticky;
+  /* position: sticky; */
   bottom: 0;
 }
 
@@ -91,21 +103,25 @@ body.body-layout {
   color: #9ca3af;
 }
 
-body {
+/* body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
+} */
 
-main {
+/* main {
   flex: 1;
-}
+} */
 
-.mborder{
+.mborder {
   border: 1px solid rgb(123, 121, 121);
   border-radius: 5px;
 }
 
+.caption {
+  font-size: small;
+  color: gray;
+}
 
 .form-label {
   font-weight: bold;
@@ -123,14 +139,36 @@ main {
 }
 
 .tab-content {
-  /* display: block; */
-  display: flex;
+  display: block;  
   flex-direction: column;
-  /* height: 100vh;  */
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  flex-grow: 1;
+  height: 100%; 
+}
+.content {
+  display: flex !important;  
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1rem;
+  gap: 1rem;
+  height: 100%; 
+}
+
+.row1{
+  display: flex !important;
+}
+
+.row2{
+  display: flex;  
+  /* flex-direction: column; */
+  flex-grow: 1;
+  gap: 1rem;
+  overflow: auto !important;
+}
+
+.row3{
+  display: flex;                
+  justify-content: flex-end; 
+  gap: 0.5rem; 
 }
 
 .debug {
@@ -147,45 +185,6 @@ main {
   /* border-radius: 8px;           Rounded corners */
 }
 /* Custom Tooltip Styles ===========================================================================================*/
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 300px;
-  margin-left: -150px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-
-  opacity: 0;
-  transition: opacity 0.3s;
-  font-size: 80%;
-}
-
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
 
 /* glass background--------------------------------------------------- */
 .glassbg {
@@ -242,19 +241,19 @@ main {
   height: 150px;
   padding: 12px 20px;
   box-sizing: border-box; */
-  /* border: 2px solid #ccc; */
-  /* border-radius: 4px; */
-  /* background-color: #ffffff;
+/* border: 2px solid #ccc; */
+/* border-radius: 4px; */
+/* background-color: #ffffff;
   resize: none;
 } */
 
 textarea:focus {
-  outline: none; 
-  border: 0;    
+  outline: none;
+  border: 0;
   box-shadow: none;
 }
 textarea::placeholder {
-  text-align: center; 
+  text-align: center;
   /* padding-top: 20vh; */
 }
 
@@ -269,39 +268,49 @@ textarea::placeholder {
   overflow: auto;
 }
 
-/* primary button ==================================================================== */
-/* Base styles for the button */
-.btn-primary {
-  background-color: #007bff; /* Blue */
-  color: white; /* Text color */
-  border: none; /* No border */
+/* button======================================================================================== */
+button {
   padding: 0.5rem 1rem; /* Padding */
-  border-radius: 0.25rem; /* Rounded corners */
-  cursor: pointer; /* Pointer on hover */
+  border-radius: 0.25rem;
+  cursor: pointer;
   transition: background-color 0.3s, transform 0.1s; /* Smooth transition */
+  border: none;
+  margin-bottom: auto;
+}
+/* primary button ============================================= */
+/* Base styles for the button */
+.primarybtn {
+  background-color: var(--primary-blue); /* Blue */
+  color: white; /* Text color */
 }
 
 /* Hover state */
-.btn-primary:hover {
+.primarybtn:hover {
   background-color: #0056b3; /* Deeper blue */
 }
 
 /* Disabled state */
-.btn-primary:disabled {
+.primarybtn:disabled {
   background-color: #6c757d; /* Gray */
   cursor: not-allowed; /* Not allowed cursor */
 }
 
-/* Active/click state */
-.btn-primary:active {
-  transform: scale(0.95); /* Slightly scale down */
-  background-color: #004085; /* Darker blue */
+/* Secondary button ==================================================================== */
+.secondaryBluebtn {
+  background-color: var(--primary-blue-30); /* Blue */
+  color: var(--primary-blue); /* Text color */
+  border: 1px solid var(--primary-blue); /* No border */
+}
+.secondaryRedbtn {
+  background-color: var(--red-30); /* Blue */
+  color: var(--red); /* Text color */
+  border: 1px solid var(--red); /* No border */
 }
 
-/* Optional: Focus state for accessibility */
-.btn-primary:focus {
-  outline: none; /* Remove outline */
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); /* Blue shadow */
+.copybtn,
+.downloadbtn {
+  color: var(--primary-blue);
+  background-color: transparent;
 }
 
 /* progrss bar =============================================================== */
@@ -325,7 +334,6 @@ textarea::placeholder {
   border: none;
 }
 
-
 .verticallyCenter {
   margin: auto 0;
 }
@@ -341,14 +349,14 @@ textarea::placeholder {
   /* colour: black; */
 }
 
-.nav-link:focus{
+.nav-link:focus {
   font-weight: bold;
-  border-bottom: 4px solid rgb(4, 8, 112);
+  border-bottom: 4px solid var(--primary-blue);
 }
 
 .active-nav {
   font-weight: bold;
-  border-bottom: 4px solid rgb(38, 5, 145);
+  border-bottom: 4px solid var(--primary-blue);
 }
 .nav-item {
   padding: 10px 20px;
@@ -356,7 +364,7 @@ textarea::placeholder {
   caret-color: transparent;
 }
 .nav-item:hover {
-  background-color: rgba(0, 123, 255, 0.1); 
+  background-color: rgba(0, 123, 255, 0.1);
 }
 
 .no-caret {
@@ -365,27 +373,35 @@ textarea::placeholder {
 
 /* flow icon container ============================= */
 .flow-icon-container {
-  display: flex;                   /* Equivalent to d-flex */
-  justify-content: center;        /* Equivalent to justify-content-center */
-  align-items: center;            /* Equivalent to align-items-center */
-  border: 2px solid gray;              /* Equivalent to border and border-2 */
-  border-radius: 50%;             /* Equivalent to rounded-circle */
+  display: flex; /* Equivalent to d-flex */
+  justify-content: center; /* Equivalent to justify-content-center */
+  align-items: center; /* Equivalent to align-items-center */
+  border: 2px solid gray; /* Equivalent to border and border-2 */
+  border-radius: 50%; /* Equivalent to rounded-circle */
 }
 
-.flow-completed{
-  border: 2px solid blue;  
-  background-color:  #3881f7a4;
+.flow-completed {
+  border: 2px solid var(--primary-blue);
+  background-color: #3881f7a4;
 }
 
 .line-separator {
-  height: 1px; 
-  width: 64px; 
-  background-color: #3b82f6; 
+  height: 1px;
+  width: 64px;
+  background-color: #3b82f6;
   margin: auto 0;
 }
 
-
 /* to all elements====================================================================================== */
-p{
+p {
   caret-color: transparent;
 }
+
+
+
+/* boot strap ovderride-------------------------------------------------------------------- */
+.form-check-input:checked {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+}
+

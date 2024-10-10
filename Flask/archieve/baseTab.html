@@ -1,0 +1,8 @@
+{% extends "base.html" %} {% block content %} {% include 'progressbar.html' %}
+<!-- Navbar included here -->
+{% include 'navbar.html' %}
+<div class="flex flex-col flex-1 p-4 overflow-auto">
+  {% block tabContent %} {% endblock %}
+</div>
+
+{% endblock %}

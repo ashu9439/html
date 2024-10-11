@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Progress Bar</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h4>Download File</h4>
+    <button id="download-btn" class="btn btn-primary">Download</button>
+    <div class="progress mt-3">
+      <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+    </div>
+  </div>
+
+  <!-- JavaScript to handle file download and update progress -->
+  <script>
+    document.getElementById('download-btn').addEventListener('click', function() {
+      const url = 'https://example.com/your-file.zip'; // Replace with your actual file URL
+      const progressBar = document.getElementById('progress-bar');
+
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.responseType = 'blob';
+
+      // Track progress
+      xhr.onprogress = function(event) {
+        if (event.lengthComputable) {
+          const percentComplete = Math.round((event.loaded / event.total) * 100);
+          progressBar.style.width = percentComplete + '%';
+          progressBar.setAttribute('aria-valuenow', percentComplete);
+          progressBar.innerHTML = percentComplete + '%';
+        }
+      };
+
+      // When the file is fully downloaded
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          // Create a link to download the file
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(xhr.response);
+          link.download = 'your-file.zip'; // Set the desired file name
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+
+          progressBar.classList.remove('progress-bar-striped', 'progress-bar-animated');
+          progressBar.innerHTML = "Download Complete";
+        } else {
+          progressBar.innerHTML = "Download Failed";
+        }
+      };
+
+      xhr.send();
+    });
+  </script>
+
+  <!-- Bootstrap JS (optional, only if you need it for other functionality) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

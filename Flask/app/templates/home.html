@@ -20,31 +20,70 @@
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
   </head>
 
-  <body class="body-layout">
-    <!-- Header -->
-    <header class="header">
-      <div class="header-content">
+  <body class="body-layout d-flex flex-column">
+    <!-- Header ===========================================================================================================-->
+    <header class="header d-flex justify-content-between px-5 py-2">
+      <div class="logo-container col">
         <img
           src="{{ url_for('static', filename='images/NovartisLogo.svg') }}"
           alt="velocisLogo"
           class="logo-image"
-          style="width: 400px; height: auto"
         />
-        <div class="d-flex">
-          <button class="header-buttons">🔔</button>
-          <div class="vl"></div>
-          <button class="header-buttons">🙍</button>
-        </div>
+      </div>
+      <div class="d-flex col-auto">
+        <button class="header-buttons">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M18.0188 16.3854L16.9604 15.3269V12.7833C16.6953 12.8371 16.4209 12.8654 16.1399 12.8654C15.8589 12.8654 15.5845 12.8371 15.3194 12.7833V16.1474H8.75525V11.2244C8.75525 9.18949 9.99422 7.53205 12.0373 7.53205C12.1002 7.53205 12.1623 7.53362 12.2236 7.53672C12.428 6.8835 12.7912 6.30049 13.2681 5.833V5.48077C13.2681 4.79974 12.7183 4.25 12.0373 4.25C11.3563 4.25 10.8065 4.79974 10.8065 5.48077V6.03872C8.45166 6.59667 7.11422 8.69718 7.11422 11.2244V15.3269L6.05576 16.3854C5.53884 16.9023 5.89987 17.7885 6.63012 17.7885H17.4363C18.1747 17.7885 18.5358 16.9023 18.0188 16.3854ZM12.0373 20.25C12.9399 20.25 13.6783 19.5115 13.6783 18.609H10.3963C10.3963 19.0442 10.5692 19.4616 10.8769 19.7694C11.1847 20.0771 11.6021 20.25 12.0373 20.25Z"
+              fill="#949499"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M16.1412 11.2243C17.5007 11.2243 18.6028 10.1223 18.6028 8.76281C18.6028 7.40334 17.5007 6.30127 16.1412 6.30127C14.7818 6.30127 13.6797 7.40334 13.6797 8.76281C13.6797 10.1223 14.7818 11.2243 16.1412 11.2243Z"
+              fill="#BE6865"
+            />
+          </svg>
+        </button>
+        <div class="vl"></div>
+        <button class="header-buttons">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12.3746 5.37143C10.9579 5.37143 9.80952 6.51985 9.80952 7.93651C9.80952 9.35316 10.9579 10.5016 12.3746 10.5016C13.7913 10.5016 14.9397 9.35316 14.9397 7.93651C14.9397 6.51985 13.7913 5.37143 12.3746 5.37143ZM8.4381 7.93651C8.4381 5.76243 10.2005 4 12.3746 4C14.5487 4 16.3111 5.76243 16.3111 7.93651C16.3111 10.1106 14.5487 11.873 12.3746 11.873C10.2005 11.873 8.4381 10.1106 8.4381 7.93651ZM6 19.3143C6 15.7937 8.85401 12.9397 12.3746 12.9397C15.8952 12.9397 18.7492 15.7937 18.7492 19.3143C18.7492 19.693 18.4422 20 18.0635 20C17.6848 20 17.3778 19.693 17.3778 19.3143C17.3778 16.5511 15.1378 14.3111 12.3746 14.3111C9.61143 14.3111 7.37143 16.5511 7.37143 19.3143C7.37143 19.693 7.06442 20 6.68571 20C6.307 20 6 19.693 6 19.3143Z"
+              fill="#949499"
+            />
+          </svg>
+        </button>
       </div>
     </header>
 
     <main
-      class="flexmain container-fluid d-flex flex-column justify-content-around bakgroundImg"
-      style="background-image: url('{{ url_for('static', filename='images/Bg.svg') }}'); color: white;"
+      class="d-flex flex-column flex-grow-1 overflow-auto justify-content-between gap-4 p-4"
+      style="background-image: url('{{ url_for('static', filename='images/Bg.svg') }}');
+             background-size: cover;
+             background-position: center;
+             background-repeat: no-repeat;
+             color: white;"
     >
       <!-- 1st div with welcome and animation -->
-      <div class="d-flex justify-content-between px-3">
-        <div class="col-7">
+      <div class="d-flex justify-content-between ">
+        <div class="col-6 pt-4">
           <img
             src="{{ url_for('static', filename='images/velocisLogoWhite.svg') }}"
             alt="velocisLogo"
@@ -78,8 +117,9 @@
             </span>
           </button>
         </div>
-        <div id="lottie-animation" class="col-2"></div>
+        <div id="lottie-animation" class="col-auto"></div>
       </div>
+
       <!-- 2nd div with 3 glass cards -->
       <div class="d-flex justify-content-between gap-5">
         <!-- glassbox-1 -->
@@ -108,7 +148,7 @@
             >
               Open
             </button>
-            <a href="#" style="color: white" class=""> Learn More > </a>
+            <a href="#" style="color: white" class="mx-4"> Learn More > </a>
           </div>
         </div>
 
@@ -125,7 +165,7 @@
             <h3 class="">Smart Template Filling</h3>
           </div>
 
-          <p class=" flex-grow-1">
+          <p class="flex-grow-1">
             Streamlining project document(s) creation across technology
             functions​
           </p>
@@ -138,7 +178,7 @@
             >
               Open
             </button>
-            <a href="#" style="color: white" class=""> Learn More > </a>
+            <a href="#" style="color: white" class="mx-4"> Learn More > </a>
           </div>
         </div>
 
@@ -168,7 +208,7 @@
             >
               Open
             </button>
-            <a href="#" style="color: white" class=""> Learn More > </a>
+            <a href="#" style="color: white" class="mx-4"> Learn More > </a>
           </div>
         </div>
       </div>

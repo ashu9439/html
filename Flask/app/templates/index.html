@@ -164,7 +164,7 @@
               <div class="col flex-grow-1 border rounded d-flex flex-column">
                 <textarea id="input_Context" placeholder="Select Industry from the above dropdown panel."
                   oninput="updateCharCount('input_Context', 'WordCount_input_Context')"
-                  class="placeholder:text-center border-0 flex-grow-1"></textarea>
+                  class="placeholder:text-center border-0 flex-grow-1 p-2"></textarea>
                 <p class="text-end px-2">
                   <span id="WordCount_input_Context" class="  ">0</span> /5000 Characters
                 </p>
@@ -176,7 +176,7 @@
               <div class="col flex-grow-1 border rounded d-flex flex-column">
                 <textarea id="input_Scope" placeholder="Select Industry from the above dropdown panel."
                   oninput="updateCharCount('input_Scope', 'WordCount_input_Scope')"
-                  class="placeholder:text-center border-0 flex-grow-1"></textarea>
+                  class="placeholder:text-center border-0 flex-grow-1 p-2"></textarea>
                 <p class="text-end px-2">
                   <span id="WordCount_input_Scope" class="  ">0</span> / 5000
                   Characters
@@ -227,7 +227,7 @@
                 <h5 class="card-title">
                   Business Case <span class="caption"> * AI generated</span>
                 </h5>
-                <button class="copybtn col-auto">Copy</button>
+                <button class="copybtn col-auto" onclick="copyToClipboard('epic_business_context', this)">Copy</button>
               </div>
               <textarea id="epic_business_context" placeholder=" place holder"
                 oninput="updateCharCount('epic_business_context', 'WordCount_epic_business_context')"
@@ -244,7 +244,7 @@
                 <h5 class="card-title">
                   Epic Abstract <span class="caption"> * AI generated</span>
                 </h5>
-                <button class="copybtn col-auto">Copy</button>
+                <button class="copybtn col-auto" onclick="copyToClipboard('epic_abstract', this)">Copy</button>
               </div>
               <textarea id="epic_abstract" placeholder="Click on “Copy” to paste your feature here and, then click on
                  “Expand Feature”" oninput="updateCharCount('epic_abstract', 'WordCount_epic_abstract')"
@@ -319,9 +319,9 @@
               <div class="d-flex p-2 my-2 flex-column">
                 <div class="d-flex justify-content-between">
                   <h5 class="col">&bull; heading</h5>
-                  <button type="button" class="copybtn col-auto">Copy</button>
+                  <button type="button" class="copybtn col-auto" onclick="copyToClipboard('feature_test', this)">Copy</button>
                 </div>
-                <textarea rows="5" class="placeholder:text-center border-0 flex-grow-1">
+                <textarea rows="5" id="feature_test" class="placeholder:text-center border-0 flex-grow-1">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, iure? Tempore, repudiandae a numquam asperiores quibusdam, 
                     similique molestiae omnis aut saepe blanditiis nostrum magnam 
                     libero hic reprehenderit nesciunt voluptate. Tempore
@@ -357,9 +357,9 @@
                     Feature Abstract
                     <span class="caption"> * AI generated</span>
                   </h5>
-                  <button class="copybtn col-auto">Copy</button>
+                  <button class="copybtn col-auto" onclick="copyToClipboard('feature_abstract', this)">Copy</button>
                 </div>
-                <textarea id="feature_selected" placeholder="Click on “Copy” to paste your feature here and, then click on
+                <textarea id="feature_abstract" placeholder="Click on “Copy” to paste your feature here and, then click on
                   “Expand Feature”" oninput="updateCharCount('feature_selected', 'WordCount_feature_selected')"
                   class="card-body flex-grow-1"></textarea>
                 <div class="text-end">
@@ -450,7 +450,7 @@
               <div class="d-flex p-2 my-2 flex-column"  id="txt-1">
                 <div class="d-flex justify-content-between">
                   <h5 class="col">&bull; heading</h5>
-                  <button type="button" class="copybtn col-auto" onclick="copyToClipboard('txt-1')">Copy</button>
+                  <button type="button" id="cpbtnid" class="copybtn col-auto" onclick="copyToClipboard('txt-1', this)">Copy</button>
                 </div>
                 <textarea rows="5" class="placeholder:text-center border-0 flex-grow-1">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, iure? Tempore, repudiandae a numquam asperiores quibusdam, 
@@ -488,7 +488,7 @@
                     User Story Abstact<span class="caption">
                       * AI generated</span>
                   </h5>
-                  <button class="copybtn col-auto">Copy</button>
+                  <button class="copybtn col-auto" onclick="copyToClipboard('feature_selected', this)">Copy</button>
                 </div>
                 <textarea id="feature_selected" placeholder="Click on “Copy” to paste your feature here and, then click on
             “Expand Feature”" oninput="updateCharCount('feature_selected', 'WordCount_feature_selected')"
@@ -505,9 +505,9 @@
                     Registered User Request ID<span class="caption">
                       * Backend Generated</span>
                   </h5>
-                  <button class="copybtn col-auto">Copy</button>
+                  <button class="copybtn col-auto" onclick="copyToClipboard('userreqid', this)" >Copy</button>
                 </div>
-                <textarea rows="1"></textarea>
+                <textarea rows="1" id="userreqid"></textarea>
               </div>
             </div>
           </div>

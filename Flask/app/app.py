@@ -4,12 +4,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
 
 # # Tabs input  epic    features    userStories
-# @app.route('/input')
-# def input():
-#     return render_template('input.html')
+@app.route('/input')
+def input():
+    return render_template('index.html')
 
 # @app.route('/epic')
 # def epic():

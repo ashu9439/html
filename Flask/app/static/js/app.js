@@ -2,82 +2,130 @@ function loadPage(path) {
   window.location.href = path;
 }
 
-//show tosts---------------------------------------------------------------------------------------------------------------
-function createToast(toastId, heading, content, type) {
-  // Get the toast container div
-  const toastContainer = document.getElementById("toast-container");
+// modal operation -----------------------------------------------------------------------------
 
-  // Create the toast HTML dynamically
-  const toastHtml = `
-    <div id="${toastId}" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
-      <div class="toast-header bg-${type} text-white">
-        <strong class="me-auto">${heading}</strong>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-      <div class="toast-body">
-        ${content}
-      </div>
-    </div>
+function openModal(modalid, heading, bodyContent, actionBtns) {
+  // Get the modal element by its ID
+  var modalElement = document.getElementById(modalid);
+
+  // Dynamically update the modal's title, body, and footer
+  modalElement.querySelector(".modal-title").innerHTML = heading;
+  modalElement.querySelector(".modal-body").innerHTML = bodyContent;
+  modalElement.querySelector(".modal-footer").innerHTML = `
+    <button type="button" class="secondaryRedbtn" data-bs-dismiss="modal">Cancel</button>
+    ${actionBtns}
   `;
 
-  // Append the toast to the toast container
-  toastContainer.insertAdjacentHTML("beforeend", toastHtml);
+  // Initialize and show the Bootstrap modal
+  var myModal = new bootstrap.Modal(modalElement, {
+    keyboard: false, // Optional: Disable closing modal with ESC key
+  });
 
-  // Initialize and show the toast using Bootstrap's JS
-  const toastElement = document.getElementById(toastId);
-  const toastInstance = new bootstrap.Toast(toastElement);
-  toastInstance.show();
-
-  // Remove the toast after 3 seconds
-  setTimeout(() => {
-    toastInstance.hide(); // Hide the toast
-    toastElement.addEventListener('hidden.bs.toast', () => {
-      toastElement.remove(); // Remove the toast from the DOM after it is hidden
-    });
-  }, 3000); // 3000 milliseconds = 3 seconds
+  myModal.show();
 }
 
-// Trigger toasts with different headings, content, and types
-// createToast("toast0", 'Info', 'Your action was successful!', 'info');
-// createToast("toast1", 'Success', 'Your action was successful!', 'success');
-// createToast("toast2", 'Warning', 'This is a warning message!', 'warning');
-// createToast("toast3", 'Error', 'Something went wrong.', 'danger');
-
-//copy content to clip bord ---------------------------------------------------------------------------------------------------------------
-function copyToClipboard(textBoxId) {
-  const textarea1 = document.getElementById(textBoxId);
-
-  // Use the modern Clipboard API
-  navigator.clipboard
-    .writeText(textarea1.value)
-    .then(() => {
-      // alert("Text copied to clipboard!");
-      createToast("itemCopied", 'Item Copied', 'You have copied an item.', 'info');
-    })
-    .catch((err) => {
-      console.error("Failed to copy text: ", err);
-    });
+function openModalTest() {
+  var body = `
+  <p>
+    modalbooody
+  </p>`;
+  var actionBtns = `
+<button type="button" class="primarybtn" data-bs-dismiss="modal">Do sth big</button>`;
+  openModal("mainModal", "heading", body, actionBtns);
 }
 
+function openModalGetEpicDetails() {
+  var head = `<h4>Get Epic Details</h4>`
+  var body = `
+  <input class="form-control" id="" placeholder="Enter Epic External ID">`;
+  var actionBtns = `
+    <button type="button" class="primarybtn" data-bs-dismiss="modal">Get Details</button>`;
+  openModal("mainModal", head, body, actionBtns);
+}
+
+function openModalClearEpicDetails() {
+  var head = `<h4>Clear Epic Details</h4>`
+  var body = `<p>Are you sure want to clear Epic details?</p>`;
+  var actionBtns = `
+    <button type="button" class="primarybtn" data-bs-dismiss="modal">Clear</button>`;
+  openModal("mainModal", head, body, actionBtns);
+}
+
+function openModalGetFeatureDetails() {
+  var head = `<h4>Clear Feature Details</h4>`
+  var body = `
+  <input class="form-control" id="" placeholder="Enter Feature ID">`;
+  var actionBtns = `
+    <button type="button" class="primarybtn" data-bs-dismiss="modal">Get Details</button>`;
+  openModal("mainModal", head, body, actionBtns);
+}
+
+
+function openModalClearFeatureDetails() {
+  var head = `<h4>Clear Feature Details</h4>`
+  var body = `<p>Are you sure want to clear feature details?</p>`;
+  var actionBtns = `
+    <button type="button" class="primarybtn" data-bs-dismiss="modal">Clear</button>`;
+  openModal("mainModal", head, body, actionBtns);
+}
+
+function openModalGetStory() {
+  var head = `<h4>Get User Story Details</h4>`
+  var body = `
+  <input class="form-control" id="" placeholder="Enter User Story External ID">`;
+  var actionBtns = `
+    <button type="button" class="primarybtn" data-bs-dismiss="modal">Get Details</button>`;
+  openModal("mainModal", head, body, actionBtns);
+}
+
+function openModalClearStory() {
+  var head = `<h4>Clear User Story Details</h4>`
+  var body = `<p>Are you sure want to clear User Story details?</p>`;
+  var actionBtns = `
+    <button type="button" class="primarybtn" data-bs-dismiss="modal">Clear</button>`;
+  openModal("mainModal", head, body, actionBtns);
+}
+
+function openModalClearFdd() {
+  var head = `<h4>Clear Functional Design Details</h4>`
+  var body = `<p>Are you sure want to clear Functional Design Details?</p>`;
+  var actionBtns = `
+    <button type="button" class="primarybtn" data-bs-dismiss="modal">Clear</button>`;
+  openModal("mainModal", head, body, actionBtns);
+}
+function openModalClearHdd() {
+  var head = `<h4>Clear Functional Design Details Details</h4>`
+  var body = `<p>Are you sure want to clear Functional Design Details Details</p>`;
+  var actionBtns = `
+    <button type="button" class="primarybtn" data-bs-dismiss="modal">Clear</button>`;
+  openModal("mainModal", head, body, actionBtns);
+}
+function openModalClearLdd() {
+  var head = `<h4>Clear Low Level Design Details</h4>`
+  var body = `<p>Are you sure want to clear Low Level Design Details?</p>`;
+  var actionBtns = `
+    <button type="button" class="primarybtn" data-bs-dismiss="modal">Clear</button>`;
+  openModal("mainModal", head, body, actionBtns);
+}
 
 //html to append or prepend
- 
-function prependHtmlToBtnContainers(query,htmlToPrepend) {
+
+function prependHtmlToBtnContainers(query, htmlToPrepend) {
   // Select all elements with the class "btn-container"
   const btnContainers = document.querySelectorAll(query);
 
   // Loop through each element and prepend the HTML
-  btnContainers.forEach(function(container) {
+  btnContainers.forEach(function (container) {
     container.innerHTML = htmlToPrepend + container.innerHTML; // Prepend the HTML
   });
 }
 
-function appendHtmlToBtnContainers(query,htmlToappend) {
+function appendHtmlToBtnContainers(query, htmlToappend) {
   // Select all elements with the class "btn-container"
   const btnContainers = document.querySelectorAll(query);
 
   // Loop through each element and prepend the HTML
-  btnContainers.forEach(function(container) {
+  btnContainers.forEach(function (container) {
     container.innerHTML = container.innerHTML + htmlToappend; // Prepend the HTML
   });
 }

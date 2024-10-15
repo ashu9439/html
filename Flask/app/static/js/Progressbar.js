@@ -4,13 +4,15 @@ function progressbar(id, icon, status) {
 
   var style= ''
   if(status == 'progress'){style="background-color: #3A66AA;"}
+  var fcolor = ''
+  if(status != 'default'){fcolor = 'boldblue'}
 
   var IconCont = `
         <div class="d-flex flex-column align-items-center">
           <div class="flow-icon-container" style = '${style}' >
             ${iconWithStatus}
           </div>
-          <p class="">${icon}</p>
+          <p class="${fcolor}">${icon}</p>
         </div>`;
 
   var modalElement = document.getElementById(id);

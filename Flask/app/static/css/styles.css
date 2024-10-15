@@ -321,14 +321,14 @@ button:disabled{
 
 /* Secondary button ------------------------------------------------------------- */
 .secondaryBluebtn {
-  background-color: var(--primary-blue-30); /* Blue */
+  background-color: #EBF0F7; /* Blue */
   color: var(--primary-blue); /* Text color */
   border: 1px solid var(--p-btn-blue);
 }
 .secondaryBluebtn:hover {
   border-color: var(--p-btn-blue-hover);
   color: var(--p-btn-blue-hover);
-  background-color: var(--primary-blue-40)
+  background-color: var(--primary-blue-30)
 }
 .secondaryBluebtn:active {
   border-color:var(--p-btn-blue-active);
@@ -342,13 +342,13 @@ button:disabled{
 
 
 .secondaryRedbtn {
-  background-color: var(--red-30); /* Blue */
+  background-color: #F9F0F0; /* Blue */
   color: var(--red); /* Text color */
   border: 1px solid var(--red); /* No border */
 }
 
 .secondaryRedbtn:hover {
-  background-color: var(--red-40);
+  background-color: var(--red-30);
   /* color: var(--red-40); */
 }
 
@@ -357,6 +357,10 @@ button:disabled{
   /* color: var(--red-50); */
 }
 
+
+.secondaryBluebtn:disabled, .secondaryRedbtn:disabled{
+  display: none;
+} 
 
 
 
@@ -569,4 +573,9 @@ progress {
 .tooltip-inner {
   max-width: 300px; /* Adjust width as needed */
   white-space: normal; /* Allow wrapping of text */
+}
+
+.boldblue{
+  font-weight: 700;
+  color: var(--primary-blue);
 }

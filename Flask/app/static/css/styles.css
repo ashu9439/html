@@ -25,14 +25,15 @@
   --red-50: rgba(190, 104, 101, 0.5);
 
   --NvGrey: rgba(142, 152, 168, 1);
-  --NvGrey-light:rgba(233, 235, 248, 1);
-
+  --NvGrey50: rgba(142, 152, 168, 0.5);
+  --NvGrey-light: rgba(233, 235, 248, 1);
 
   /* bs override======================== */
   --bs-primary: rgba(58, 102, 170, 1);
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   display: flex;
@@ -51,7 +52,7 @@ body {
 
 .progressbar {
   padding: 5px 0px;
-  background: linear-gradient(to bottom, rgba(38, 132, 247, 0.381), white 20%);
+  /* background: linear-gradient(to bottom, rgba(38, 132, 247, 0.381), white 20%); */
 }
 
 /* vertical line------- */
@@ -59,7 +60,6 @@ body {
   border-left: 2px solid var(--NvGrey-light);
   margin: 0px 4px;
 }
-
 
 .footer {
   background-color: #f7fafc;
@@ -132,37 +132,36 @@ body {
 }
 
 .tab-content {
-  display: block;  
+  display: block;
   flex-direction: column;
   flex-grow: 1;
-  height: 100%; 
+  height: 100%;
 }
 .content {
-  display: flex !important;  
+  display: flex !important;
   flex-direction: column;
   flex-grow: 1;
-  padding: 1rem 2rem ;
+  padding: 1rem 2rem;
   gap: 1rem;
-  height: 100%; 
-  
+  height: 100%;
 }
 
-.row1{
+.row1 {
   display: flex !important;
 }
 
-.row2{
-  display: flex;  
+.row2 {
+  display: flex;
   /* flex-direction: column; */
   flex-grow: 1;
   gap: 1rem;
   overflow: auto !important;
 }
 
-.row3{
-  display: flex;                
-  justify-content: flex-end; 
-  gap: 0.5rem; 
+.row3 {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
 }
 
 .debug {
@@ -253,7 +252,6 @@ textarea::placeholder {
   font-size: 14px;
 }
 
-
 /* main contaoiner============================================================== */
 
 .flexmain {
@@ -273,11 +271,15 @@ button {
   transition: background-color 0.3s, transform 0.1s; /* Smooth transition */
   border: none;
   margin-bottom: auto;
-  margin-left: 1rem ;
+  margin-left: 1rem;
   font-size: 14px;
 }
-button:disabled{
+button:disabled {
   cursor: not-allowed; /* Not allowed cursor */
+}
+
+.header {
+  box-shadow: 0 10px 15px -5px var(--primary-blue);
 }
 
 .header-buttons {
@@ -307,13 +309,12 @@ button:disabled{
 }
 
 .primarybtn:hover {
-  background-color: var(--p-btn-blue-hover) ; 
+  background-color: var(--p-btn-blue-hover);
 }
 
 .primarybtn:active {
   background-color: var(--p-btn-blue-active);
 }
-
 
 .primarybtn:disabled {
   background-color: var(--p-btn-blue-disable);
@@ -321,28 +322,27 @@ button:disabled{
 
 /* Secondary button ------------------------------------------------------------- */
 .secondaryBluebtn {
-  background-color: #EBF0F7; /* Blue */
+  background-color: #ebf0f7; /* Blue */
   color: var(--primary-blue); /* Text color */
   border: 1px solid var(--p-btn-blue);
 }
 .secondaryBluebtn:hover {
   border-color: var(--p-btn-blue-hover);
   color: var(--p-btn-blue-hover);
-  background-color: var(--primary-blue-30)
+  background-color: var(--primary-blue-30);
 }
 .secondaryBluebtn:active {
-  border-color:var(--p-btn-blue-active);
+  border-color: var(--p-btn-blue-active);
   color: var(--p-btn-blue-active);
-  background-color: var(--primary-blue-50)
+  background-color: var(--primary-blue-50);
 }
 .secondaryBluebtn:disabled {
   border-color: var(--p-btn-blue-disable);
   color: var(--p-btn-blue-disable);
 }
 
-
 .secondaryRedbtn {
-  background-color: #F9F0F0; /* Blue */
+  background-color: #f9f0f0; /* Blue */
   color: var(--red); /* Text color */
   border: 1px solid var(--red); /* No border */
 }
@@ -357,12 +357,10 @@ button:disabled{
   /* color: var(--red-50); */
 }
 
-
-.secondaryBluebtn:disabled, .secondaryRedbtn:disabled{
+.secondaryBluebtn:disabled,
+.secondaryRedbtn:disabled {
   display: none;
-} 
-
-
+}
 
 /* Text button ------------------------------------------------------------- */
 .copybtn,
@@ -433,13 +431,13 @@ button:disabled{
 
 /* flow icon container ============================= */
 .flow-icon-container {
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  border: 2px solid var(--NvGrey-light); 
-  border-radius: 50%; 
-  width: 32px; 
-  height: 32px
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--NvGrey-light);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
 }
 
 .flow-completed {
@@ -455,16 +453,23 @@ button:disabled{
   margin: auto 0;
 }
 
-.line-separator-completed{
+.line-separator-completed {
   border-top: 2px dashed var(--primary-blue);
 }
 
 /* to all elements====================================================================================== */
-p, h1,h2,h3,h4,h5,h6, button{
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
   caret-color: transparent;
 }
 
-textarea{
+textarea {
   resize: none;
   border: none;
 }
@@ -473,72 +478,67 @@ textarea::placeholder {
   text-align: center; /* Centers the placeholder text */
 }
 
-
-
 /* boot strap ovderride-------------------------------------------------------------------- */
 .form-check-input:checked {
   background-color: var(--primary-blue);
   border-color: var(--primary-blue);
 }
 
-
-
-
-
 /* Novartis TYPOGRPHY--------------------------------------------------------------------------------------------------- */
-h1{
+h1 {
   font-weight: 700; /* Bold */
   font-size: 36px; /* Font size */
   line-height: 40px; /* Line height */
   letter-spacing: 0;
 }
 
-h2{
+h2 {
   font-weight: 700; /* Bold */
   font-size: 32px; /* Font size */
   line-height: 36px; /* Line height */
   letter-spacing: 0;
 }
 
-h3{
+h3 {
   font-weight: 700; /* Bold */
   font-size: 22px; /* Font size */
-  line-height: 28px; 
+  line-height: 28px;
   letter-spacing: 0;
 }
 
-h4{
+h4 {
   font-weight: 700; /* Bold */
   font-size: 20px; /* Font size */
   line-height: 24px; /* Line height */
-  letter-spacing: 0; 
+  letter-spacing: 0;
 }
 
-h5{
+h5 {
   font-weight: 700; /* Bold */
   font-size: 16px; /* Font size */
   line-height: 24px; /* Line height */
   letter-spacing: 0;
 }
 
-h6{
+h6 {
   font-weight: 700; /* Bold */
   font-size: 14px; /* Font size */
-  line-height: 20px; 
+  line-height: 20px;
   letter-spacing: 0;
 }
 
-.card-header{
+.card-header {
   background: transparent;
 }
 
-.lg-text,p,textarea {
+.lg-text,
+p,
+textarea {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0;
 }
-
 
 .md-text {
   font-weight: 400;
@@ -554,28 +554,67 @@ h6{
   letter-spacing: 0;
 }
 
-.descriptive-txt,.text-end, .caption {
-  font-weight: 500; 
-  font-size: 10px; 
-  line-height: 12px; 
+.descriptive-txt,
+.text-end,
+.caption {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
   color: var(--NvGrey);
 }
-
 
 /* prohress bar ---------------------------------------------------------------------- */
 progress {
   width: 100%;
-  height: 10px; 
+  height: 10px;
   /* background-color: red; */
 }
-
 
 .tooltip-inner {
   max-width: 300px; /* Adjust width as needed */
   white-space: normal; /* Allow wrapping of text */
 }
 
-.boldblue{
+.boldblue {
   font-weight: 700;
   color: var(--primary-blue);
+}
+
+/* Fullscreen overlay ------------------------------------------------------------*/
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--NvGrey50); /* White background with transparency */
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Spinner */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db; /* Blue color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Keyframes for spinner rotation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide the overlay when loading is complete */
+.hidden {
+  display: none;
 }

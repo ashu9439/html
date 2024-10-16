@@ -25,7 +25,7 @@ function getInnertext(item) {
         });
     }else {
         // If no child nodes, just copy the innerText or innerHTML
-        textToCopy = item.innerText || item.textContent;
+        textToCopy = item.innerText || item.textContent || item.value;
     }
     return textToCopy
 }

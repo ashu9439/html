@@ -23,7 +23,7 @@
 </head>
 
 <body class="body-layout d-flex flex-column">
-  <!-- Modal structure -->
+  <!-- Modal structure------------------------------------------------------------------- -->
   <div class="modal fade" id="mainModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -41,10 +41,15 @@
     </div>
   </div>
 
+  <!-- loading overlay------------------------------------------------------------------ -->
+  <div id="loadingOverlay" class="loading-overlay hidden">
+    <!-- <div class="spinner"></div> -->
+    <div id="loaderAnimation"></div>
+  </div>
+
   <!-- <button type="button" class="btn btn-primary" onclick="openModalTest()">
     Open Modal with JavaScript
   </button> -->
-
 
   <!-- Header ===========================================================================================================-->
   <header class="header d-flex justify-content-between px-5 py-2">
@@ -136,6 +141,8 @@
     <li class="nav-item" id="nav_tab_code" onclick="showTab('tab_code')">
       Code
     </li>
+
+    
   </ul>
 
   <!--Main Content===========================================================================================================-->
@@ -832,12 +839,14 @@
                   <h5 class="  card-title">Test Plan</h5>
                 </div>
                 <div>
-                  <button class="  downloadbtn col-auto">Download</button>
-                  <button class="  copybtn col-auto">Copy</button>
+                  <button class="  downloadbtn col-auto"
+                    onclick="downloadelementContent('testplan', 'testplan')">Download</button>
+                  <button id="testplanCpBtn" class="  copybtn col-auto"
+                    onclick="copyToClipboard('testplan', this)">Copy</button>
                 </div>
 
               </div>
-              <textarea id="" class="  border-0 card-body flex-grow-1" style="resize: none;"></textarea>
+              <textarea id="testplan" class="border-0 card-body flex-grow-1" style="resize: none;"></textarea>
             </div>
             <!-- col-2 -->
             <div class="   col flex-grow-1 d-flex flex-col card shadow-sm flex-grow-1">
@@ -871,7 +880,7 @@
           <!-- 3rd row containing buttons -->
           <div class=" row3 below-btn-container">
             <button type="button" class="secondaryBluebtn col-auto downloadicon"
-              onclick="Download(`https://picsum.photos/1000/1000`, 'manjulika')">
+              onclick="Download(`https://picsum.photos/1000/1000`, 'filename')">
               Download
             </button>
             <button type="button" id="btn_gen_epic" class="  col-auto primarybtn genicon">Generate Manual Testing
@@ -881,7 +890,8 @@
 
       </div>
 
-      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+      <!--Manual Testing ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+      
 
       <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
@@ -909,8 +919,14 @@
   </footer>
 
   <script>
-    showTab("tab_funcd");
+    showTab("tab_code");
     enableToolTip();
+
+    //todo: for demo remove later
+    //showLoading();
+    //setTimeout(hideLoading, 3000);
+    hideLoading()
+
 
     //createToast("toast0", 'Info', 'Your action was successful!', 'info', false, 3000);
 
@@ -1006,6 +1022,22 @@ qualified professionals ">
                   fill="white" />
               </svg>`
     );
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+  <script>
+    // Initialize the animation
+    var animation = lottie.loadAnimation({
+      container: document.getElementById("loaderAnimation"),
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "{{ url_for('static', filename='images/Loader.json') }}",
+    });
+    // animation.setSpeed(1.5);
+    // animation.play();
+    // animation.stop();
+    // animation.pause();
   </script>
 </body>
 

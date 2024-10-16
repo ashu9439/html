@@ -2,6 +2,21 @@ function loadPage(path) {
   window.location.href = path;
 }
 
+
+// loading overlay-------------------------------------------------------------------------------
+
+function showLoading() {
+  if (loadingOverlay.classList.contains('hidden')) {
+    loadingOverlay.classList.remove('hidden');
+  } 
+}
+
+function hideLoading() {
+  if (!loadingOverlay.classList.contains('hidden')) {
+    loadingOverlay.classList.add('hidden');
+  } 
+}
+
 // modal operation -----------------------------------------------------------------------------
 
 function openModal(modalid, heading, bodyContent, actionBtns) {
@@ -103,6 +118,14 @@ function openModalClearHdd() {
 function openModalClearLdd() {
   var head = `<h4>Clear Low Level Design Details</h4>`
   var body = `<p>Are you sure want to clear Low Level Design Details?</p>`;
+  var actionBtns = `
+    <button type="button" class="primarybtn" data-bs-dismiss="modal">Clear</button>`;
+  openModal("mainModal", head, body, actionBtns);
+}
+
+function openModalClearManualTest() {
+  var head = `<h4>Clear Manual Test Details</h4>`
+  var body = `<p>Are you sure want to clear manual test Details?</p>`;
   var actionBtns = `
     <button type="button" class="primarybtn" data-bs-dismiss="modal">Clear</button>`;
   openModal("mainModal", head, body, actionBtns);
@@ -222,4 +245,10 @@ function updateCharCount(textboxid, countId) {
   const textInput = document.getElementById(textboxid);
   const countDisplay = document.getElementById(countId);
   countDisplay.textContent = textInput.value.length; // Update character count
+
+  textInput.textContent = textInput.value
+}
+
+function updateText(elementId, value) {
+  document.getElementById(elementId).textContent = value;
 }
